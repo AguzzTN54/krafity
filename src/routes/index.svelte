@@ -1,46 +1,110 @@
+<script>
+	import '../theme/style.scss';
+	import { TopbarCategoryList, RecomendedCategory } from '../components/categories/index';
+	import { MainPostList, PostList1, PostList2 } from '../components/posts/index';
+	import { TagComponent1 } from '../components/tags/index';
+	import { ProductComponent1 } from '../components/catalogue/index';
+	import { PengrajinAvatar } from '../components/users/index';
+	import { VideoList, VideoSidebar } from '../components/videos/index';
+</script>
+
+<svelte:head>
+	<title> Krafity - Share Your Creativity </title>
+</svelte:head>
+
+<TopbarCategoryList />
+<PostList1 />
+<PostList2 />
+
+<section class="row row-1">
+	<div class="col">
+		<RecomendedCategory />
+	</div>
+	<div class="col tags">
+		<TagComponent1 />
+	</div>
+</section>
+
+<div style="margin-top: 40px;"></div>
+<ProductComponent1 />
+
+<div style="margin-top: 20px;"></div>
+<PengrajinAvatar />
+
+<section class="main row">
+	<div class="content">
+		<MainPostList />
+	</div>
+	<div class="right-bar">
+		<VideoSidebar />
+		<div style="margin-top: 30px;"></div>
+		<VideoList />
+	</div>
+</section>
+
+<footer>
+	<div class="col">
+		mantab
+	</div>
+</footer>
+
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
+	.row {
+		display: flex;
 		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
+		padding: 10px 5rem;
+		margin-top: 15px;
+		margin-bottom: 20px;
+		position: relative;
+		/* border-top:1px solid #ccc; */
+	}
+	.row-1::after {
+		content: '';
+		display: flex;
+		width: 85%;
+		border-bottom: 2px solid #eee;
+		margin-top: 10px;
+		position: absolute;
+		left: 8%;
+		bottom: -15px;
 	}
 
-	p {
-		margin: 1em auto;
+	.col {
+		flex-grow: 1;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
+	.content {
+		flex-basis: 65%;
+	}
+
+	.right-bar {
+		flex-basis: 35%;
+	}
+
+	footer {
+		background-color: var(--mdc-theme-secondary);
+		display: flex;
+		padding: 2rem 5%;
+	}
+
+	@media (max-width: 780px) {
+		.row {
+			flex-direction: column;
+			padding-left: 5%;
+			padding-right: 5%;
+		}
+		.tags {
+			margin-top: 30px;
+		}
+		.content {
+			margin-bottom: 15px;
+		}
+		.content::after {
+			content: '';
+			display: block;
+			width: 80%;
+			margin: 20px auto auto;
+			border-bottom: 1px solid #dadada;
 		}
 	}
 </style>
-
-<svelte:head>
-	<title>Sapper project template</title>
-</svelte:head>
-
-<h1>Great success!</h1>
-
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
