@@ -1,4 +1,4 @@
-import { timestamp, files, shell, routes } from '@sapper/service-worker';
+import { timestamp, files, shell } from '@sapper/service-worker';
 
 const ASSETS = `cache${timestamp}`;
 
@@ -7,33 +7,32 @@ const ASSETS = `cache${timestamp}`;
 const to_cache = shell.concat(files);
 const cached = new Set(to_cache);
 
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
       .open(ASSETS)
-      .then(cache => cache.addAll(to_cache))
+      .then((cache) => cache.addAll(to_cache))
       .then(() => {
         self.skipWaiting();
-      })
+      }),
   );
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(async keys => {
+    caches.keys().then(async (keys) => {
       // delete old caches
       for (const key of keys) {
         if (key !== ASSETS) await caches.delete(key);
       }
 
       self.clients.claim();
-    })
+    }),
   );
 });
 
-self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET' || event.request.headers.has('range'))
-    return;
+self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET' || event.request.headers.has('range')) { return; }
 
   const url = new URL(event.request.url);
 
@@ -42,10 +41,9 @@ self.addEventListener('fetch', event => {
 
   // ignore dev server requests
   if (
-    url.hostname === self.location.hostname &&
-    url.port !== self.location.port
-  )
-    return;
+    url.hostname === self.location.hostname
+    && url.port !== self.location.port
+  ) { return; }
 
   // always serve static files and bundler-generated assets from cache
   if (url.host === self.location.host && cached.has(url.pathname)) {
@@ -69,7 +67,7 @@ self.addEventListener('fetch', event => {
   // cache if the user is offline. (If the pages never change, you
   // might prefer a cache-first approach to a network-first one.)
   event.respondWith(
-    caches.open(`offline${timestamp}`).then(async cache => {
+    caches.open(`offline${timestamp}`).then(async (cache) => {
       try {
         const response = await fetch(event.request);
         cache.put(event.request, response.clone());
@@ -80,6 +78,6 @@ self.addEventListener('fetch', event => {
 
         throw err;
       }
-    })
+    }),
   );
 });
