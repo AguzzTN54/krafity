@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="7.87402in" height="5.90551in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 157253.87 117940.4"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#DBDBDD}
+    .fil0 {fill:#EFEFF0}
+    .fil3 {fill:url(#id0)}
+    .fil2 {fill:url(#id1)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="69407.14" y1="58954.08" x2="79938.59" y2="49430.47">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B1B1B3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#DBDBDD"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" xlink:href="#id0" x1="69407.06" y1="58954.08" x2="80428.59" y2="69771.1">
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1887170556256">
+   <rect class="fil0" width="157253.87" height="117940.4"/>
+   <path class="fil1" d="M70708.97 67372.51c-208.83,-599.14 450.38,-805.14 1645.43,-2010.57l6338.12 -6292.67c-810.64,-1382.1 -7149.39,-6903.92 -8170.2,-8443.83 -2164.52,-1865.58 -9062.3,-9506.15 -10387.17,-10080.76l-13.37 36818.71c1987.92,-877.56 8910.95,-9574.17 10587.2,-9990.89z"/>
+   <path class="fil2" d="M70708.97 67372.51c2857.93,3177.94 6134.32,6061.19 9134.96,9169.47 1274.39,1320.07 1003.52,1051.71 3387.01,1037.95l13901.16 -19.34c-399.27,-948.24 -3460.37,-3712.61 -4400.91,-4648.42 -1608.86,-1600.77 -3033.74,-3038.07 -4629.24,-4628.3 -1596.13,-1590.94 -3026.67,-3037.75 -4628.45,-4629.63 -1464.43,-1455.38 -3348.8,-3135.96 -4613.2,-4666.43l-167.79 81.46 -6338.12 6292.67c-1195.05,1205.43 -1854.26,1411.43 -1645.43,2010.57z"/>
+   <path class="fil3" d="M70522.31 50625.45c1020.81,1539.91 7359.56,7061.72 8170.2,8443.83l167.79 -81.46c689.56,-1286.49 17520.6,-17118.03 18257.65,-18623.5l-13887.33 -11.48c-2569.92,-18.71 -2049.57,-238.79 -3440.95,1142.53 -1346.25,1336.42 -8548.63,8794.58 -9267.36,9130.08z"/>
+  </g>
+ </g>
+</svg>
