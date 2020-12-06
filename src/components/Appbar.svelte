@@ -29,16 +29,46 @@
   export let segment;
 </script>
 
+<style>
+  .site-logo {
+    height: 30px;
+    width: 100px;
+    display: block;
+    margin: auto;
+  }
+  .site-logo img {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  :global(.brand) {
+    margin:auto;
+  }
+  :global(.krafity-app-bar) {
+    border-bottom: 1px solid #ccc;
+  }
+
+  @media screen and (min-width:780px) {
+    :global(.brand) {
+      margin-left: 2rem;
+    }
+  }
+</style>
+
 <TopAppBar variant="standart" prominent={false} dense class="krafity-app-bar">
   <Row>
     {#if $responsive}
       <Section>
         <IconButton class="material-icons" on:click={() => { drawerOpen = !drawerOpen; }}>menu</IconButton>
       </Section>
-      {/if}
+    {/if}
 
     <Section>
-      <Title class="text-center">Static</Title>
+      <Title class="text-center brand">
+        <a href="/" class="site-logo">
+          <img src="/logo/krafity-logo.svg" alt="Krafity Logo">
+        </a>
+      </Title>
     </Section>
 
     <Section align="end" toolbar>
