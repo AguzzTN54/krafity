@@ -1,14 +1,14 @@
 <script context="module">
   export const preload = async ({ params }) => {
-    return new Promise((resolve) => {
-      const t = setTimeout(() => {
-        clearTimeout(t);
-        const { slug } = params;
-        return resolve({ slug });
-      }, 3000);
-    });
+    // return new Promise((resolve) => {
+    //   const t = setTimeout(() => {
+    //     clearTimeout(t);
+    //     const { slug } = params;
+    //     return resolve({ slug });
+    //   }, 3000);
+    // });
     const { slug } = params;
-    return ({ slug });
+    return ({ slug: slug.toLowerCase() });
   };
 </script>
 
@@ -125,14 +125,16 @@
 <section class="auth-page">
   <div class="mask1" /><div class="mask2" />
   <div class="auth-form-field">
-    <h1 class="brand"><a href="/"> Krafity </a></h1>
+    <h1 class="brand"><a href="/" rel="prefetch">
+      <img src="/logo/krafity-logo.svg" alt="Krafity Logo">
+    </a></h1>
 
-    {#if slug.toLowerCase() === 'register'}
+    {#if slug === 'register'}
       <Register />
-    {:else if slug.toLowerCase() === 'login'}
+    {:else if slug === 'login'}
       <Login />
     {:else}
-      <div>Loading ...</div>
+      <div>Mengalihkan ...</div>
     {/if}
 
   </div>
