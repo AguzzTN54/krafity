@@ -29,6 +29,11 @@
       formElement.classList.remove('form-disabled');
     }
   };
+
+  let passVisible = false;
+  const showPass = () => {
+    passVisible = !passVisible;
+  };
 </script>
 
 <style>
@@ -55,6 +60,8 @@
   <div>
     <Textfield
       dense
+      withTrailingIcon
+      type="text"
       label="Username atau Email"
       variant="outlined"
       style="width:100%;"
@@ -63,6 +70,7 @@
       input$aria-describedby="username"
       bind:value={userField}
     >
+      <Icon class="material-icons">mail</Icon>
     </Textfield>
     <HelperText />
   </div>
@@ -71,7 +79,7 @@
     <Textfield
       dense
       withTrailingIcon
-      type="password"
+      type={passVisible ? 'text' : 'password'}
       label="Konfirmasi Password"
       variant="outlined"
       style="width:100%;"
@@ -80,7 +88,9 @@
       input$aria-describedby="konfiramsi-password"
       bind:value={passField}
     >
-    <Icon class="material-icons">mail</Icon>
+    <Icon class="material-icons" role="button" on:click={showPass}>
+      {passVisible ? 'visibility' : 'visibility_off' }
+    </Icon>
     </Textfield>
   </div>
 

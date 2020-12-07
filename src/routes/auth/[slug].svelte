@@ -1,12 +1,5 @@
 <script context="module">
   export const preload = async ({ params }) => {
-    // return new Promise((resolve) => {
-    //   const t = setTimeout(() => {
-    //     clearTimeout(t);
-    //     const { slug } = params;
-    //     return resolve({ slug });
-    //   }, 3000);
-    // });
     const { slug } = params;
     return ({ slug: slug.toLowerCase() });
   };
@@ -26,6 +19,11 @@
 </script>
 
 <style>
+  .brand img {
+    width: 120px;
+    height: auto;
+  }
+
   .auth-page {
     width:100vw;
     height:100vh;
@@ -126,7 +124,7 @@
   <div class="mask1" /><div class="mask2" />
   <div class="auth-form-field">
     <h1 class="brand"><a href="/" rel="prefetch">
-      <img src="/logo/krafity-logo.svg" alt="Krafity Logo">
+      <img src="/assets/logo/krafity-logo.svg" alt="Krafity Logo">
     </a></h1>
 
     {#if slug === 'register'}

@@ -1,7 +1,10 @@
 <script>
   import { goto } from '@sapper/app';
+  import { onMount } from 'svelte';
 
-  goto('/');
+  onMount(() => {
+    goto('/');
+  });
 </script>
 
 <div class="err">
