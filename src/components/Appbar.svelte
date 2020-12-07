@@ -27,6 +27,12 @@
   const responsive = getContext('responsive');
 
   export let segment;
+
+  let showBackButton = false;
+  $: if (segment === 'tutorial') {
+    if ($page.params.slug) showBackButton = true;
+    else showBackButton = false;
+  } else showBackButton = false;
 </script>
 
 <style>
@@ -59,7 +65,11 @@
   <Row>
     {#if $responsive}
       <Section>
-        <IconButton class="material-icons" on:click={() => { drawerOpen = !drawerOpen; }}>menu</IconButton>
+        {#if showBackButton}
+          <IconButton class="material-icons" on:click={() => { window.history.back(-1); }}>arrow_back_ios</IconButton>
+        {:else}
+          <IconButton class="material-icons" on:click={() => { drawerOpen = !drawerOpen; }}>menu</IconButton>
+        {/if}
       </Section>
     {/if}
 
