@@ -7,16 +7,23 @@
     Scrim,
   } from '@smui/drawer';
   import List, {
-    Item, Text, Graphic, Separator, Subheader,
+    Item, Text, Graphic, Separator,
   } from '@smui/list';
   import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
   import IconButton from '@smui/icon-button';
-  import H6 from '@smui/common/H6.svelte';
   import { getContext } from 'svelte';
   import { stores } from '@sapper/app';
 
+  export let segment;
+
+  let showBackButton = false;
+  $: if (segment === 'tutorial') {
+    if ($page.params.slug) showBackButton = true;
+    else showBackButton = false;
+  } else showBackButton = false;
+
   let drawerOpen;
-  let active;
+  let active = segment;
 
   const { page } = stores();
   const setActive = (value) => {
@@ -26,13 +33,31 @@
   };
   const responsive = getContext('responsive');
 
-  export let segment;
+  const topbarItem = [
+    {
+      title: 'Toko',
+      icon: 'store',
+      url: '/toko',
+    },
+    {
+      title: 'Tutorial',
+      icon: '',
+      url: 'tutorial',
+    },
+  ];
 
-  let showBackButton = false;
-  $: if (segment === 'tutorial') {
-    if ($page.params.slug) showBackButton = true;
-    else showBackButton = false;
-  } else showBackButton = false;
+  const drawerItem = [
+    {
+      title: 'Tutorial',
+      icon: 'store',
+      url: '/tutorial',
+    },
+    {
+      title: 'Toko',
+      icon: 'store',
+      url: '/toko',
+    },
+  ];
 </script>
 
 <style>
@@ -47,16 +72,47 @@
     margin-left: auto;
     margin-right: auto;
   }
-  :global(.brand) {
+
+  .nav-link {
+    color:var(--mdc-theme-primary);
+    opacity: 0.7;
+    transition: all .2s;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 5px;
+    text-transform: uppercase;
+  }
+  .nav-link:hover {
+    opacity: 1;
+  }
+
+  .nav-link > i{
+    font-size: 1rem;
+    padding:0;
+    margin:0;
+  }
+
+  .btn {
+    color: #fff;
+    background-color: var(--mdc-theme-primary);
+    padding: 5px 10px;
+    font-size: .9rem;
+    border-radius: 2px;
+    margin-left: 10px;
+  }
+
+  :global(.brand-logo) {
     margin:auto;
   }
   :global(.krafity-app-bar) {
+    padding-left: 5%;
+    padding-right: 5%;
     border-bottom: 1px solid #ccc;
   }
 
   @media screen and (min-width:780px) {
-    :global(.brand) {
-      margin-left: 2rem;
+    :global(.brand-logo) {
+      margin-left: 0;
     }
   }
 </style>
@@ -74,7 +130,7 @@
     {/if}
 
     <Section>
-      <Title class="text-center brand">
+      <Title class="text-center brand-logo">
         <a href="/" class="site-logo">
           <img src="/logo/krafity-logo.svg" alt="Krafity Logo">
         </a>
@@ -83,15 +139,15 @@
 
     <Section align="end" toolbar>
       {#if !$responsive}
-        <IconButton class="material-icons" aria-label="Download">
-          file_download
-        </IconButton>
-        <IconButton class="material-icons" aria-label="Print this page">
-          print
-        </IconButton>
-        <IconButton class="material-icons" aria-label="Bookmark this page">
-          bookmark
-        </IconButton>
+        {#each topbarItem as { icon, title, url} (url)} 
+          <a href={url} rel="prefetch" class="nav-link">
+            <i class="material-icons"> {icon} </i>
+            {title}
+          </a>
+        {/each}
+        <a href="/auth/login" class="btn">
+          Login
+        </a>
       {:else}
         <IconButton class="material-icons" aria-label="Download">
           search
@@ -104,50 +160,43 @@
 <!-- Drawer -->
 <Drawer variant="modal" bind:open={drawerOpen}>
   <Header>
-    <DrawerTitle>Super Mail</DrawerTitle>
-    <Subtitle>It's the best fake mail app drawer.</Subtitle>
+    <DrawerTitle>
+      <img src="/assets/logo/krafity-logo.svg" alt="Krafity brand" style="width:100px;">
+    </DrawerTitle>
+    <Subtitle>Share Your Creativity.</Subtitle>
   </Header>
   <Content>
     <List>
-      <Item href="/auth/login" rel="prefetch" on:click={() => setActive('Inbox')} activated={active === 'Inbox'}>
+      {#each drawerItem as { url, icon, title } (url)}
+        <Item
+          rel="prefetch"
+          href={url}
+          activated={active === title.toLowerCase()}
+          on:click={() => setActive(title.toLowerCase())}
+        >
+          <Graphic class="material-icons" aria-hidden="true">{icon}</Graphic>
+          <Text>{title}</Text>
+        </Item>
+      {/each}
+
+      <Separator nav />
+      <Item
+        rel="prefetch"
+        href="/auth/login"
+        activated={active === 'Inbox'}
+        on:click={() => setActive('Inbox')}
+      >
         <Graphic class="material-icons" aria-hidden="true">inbox</Graphic>
         <Text>Login</Text>
       </Item>
       <Item
+        rel="prefetch"
         href="/auth/register"
         activated={active === 'register'}
         on:click={() => setActive('register')}
       >
         <Graphic class="material-icons" aria-hidden="true">star</Graphic>
         <Text>Daftar</Text>
-      </Item>
-      <Item
-        href="javascript:void(0)">
-        <Graphic class="material-icons" aria-hidden="true">send</Graphic>
-        <Text>Sent Mail</Text>
-      </Item>
-      <Item
-        href="javascript:void(0)">
-        <Graphic class="material-icons" aria-hidden="true">drafts</Graphic>
-        <Text>Drafts</Text>
-      </Item>
-
-      <Separator nav />
-      <Subheader component={H6}>Labels</Subheader>
-      <Item
-        href="javascript:void(0)">
-        <Graphic class="material-icons" aria-hidden="true">bookmark</Graphic>
-        <Text>Family</Text>
-      </Item>
-      <Item
-        href="javascript:void(0)">
-        <Graphic class="material-icons" aria-hidden="true">bookmark</Graphic>
-        <Text>Friends</Text>
-      </Item>
-      <Item
-        href="javascript:void(0)">
-        <Graphic class="material-icons" aria-hidden="true">bookmark</Graphic>
-        <Text>Work</Text>
       </Item>
     </List>
   </Content>
