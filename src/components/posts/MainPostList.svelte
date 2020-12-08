@@ -94,7 +94,7 @@
             </a>
           </div>
 
-          <h3 class="text-overflow"><a href="/tutorial/uhuk-uhuk">Ini judul post nya ya bapaq :D saya idak tahu apa apa</a></h3>
+          <h3 class="text-overflow"><a href="/tutorial/uhuk-uhuk" rel="prefetch">Ini judul post nya ya bapaq :D saya idak tahu apa apa</a></h3>
           <p class="short-desc text-overflow">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident tempore doloribus in eaque qui aut tenetur et asperiores nesciunt enim!
           </p>
