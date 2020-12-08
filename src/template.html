@@ -26,7 +26,14 @@
 </head>
 <body>
 	<!-- The application will be rendered inside this element,
-	     because `src/client.js` references it -->
+			 because `src/client.js` references it -->
+	<div class="loader">
+		<div class="loader-icon">
+			<span></span>
+		</div>
+		<p class="mtop-3">Tunggu Sejenak..</p>
+	</div>
+	
 	<div id='root'>%sapper.html%</div>
 
 	<!-- Sapper creates a <script> tag containing `src/client.js`
