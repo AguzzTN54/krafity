@@ -12,7 +12,7 @@
   import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
   import IconButton from '@smui/icon-button';
   import { getContext } from 'svelte';
-  import { stores } from '@sapper/app';
+  import { goto, stores } from '@sapper/app';
 
   export let segment;
 
@@ -35,7 +35,7 @@
 
   const topbarItem = [
     {
-      title: 'Toko',
+      title: 'Katalog',
       icon: 'store',
       url: '/katalog',
     },
@@ -53,7 +53,7 @@
       url: '/tutorial',
     },
     {
-      title: 'Toko',
+      title: 'Katalog',
       icon: 'store',
       url: '/katalog',
     },
@@ -123,7 +123,7 @@
     {#if $responsive}
       <Section>
         {#if showBackButton}
-          <IconButton class="material-icons" on:click={() => { window.history.back(-1); }}>arrow_back_ios</IconButton>
+          <IconButton class="material-icons" on:click={() => { goto('/tutorial'); }}>arrow_back_ios</IconButton>
         {:else}
           <IconButton class="material-icons" on:click={() => { drawerOpen = !drawerOpen; }}>menu</IconButton>
         {/if}
