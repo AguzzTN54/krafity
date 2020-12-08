@@ -17,7 +17,7 @@
     right:5%;
     height:unset;
     width: 300px;
-    max-width:50%;
+    max-width:40%;
   }
 
   .banner-caption {
@@ -33,6 +33,18 @@
     font-weight: bold;
     box-shadow: -4px 5px 8px -5px rgba(0,0,0,0.5);
     z-index: +1;
+  }
+
+  @media screen and (max-width: 600px) {
+    .banner {
+      height: 150px;
+    }
+    .banner img {
+      bottom: -10px;
+    }
+    .banner-caption {
+      font-size: 1.2rem;
+    }
   }
 </style>
 

@@ -1,4 +1,5 @@
 <script>
+  import '../theme/style.scss';
   import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
   import { onMount, setContext } from 'svelte';
   import { writable } from 'svelte/store';
@@ -11,7 +12,18 @@
   
   let mobile = false;
   const toggleResponsive = () => { mobile = (window.innerWidth < 750); };
-  onMount(toggleResponsive);
+
+  const removeLoader = (loader, t) => {
+    clearTimeout(t);
+    loader.remove();
+  };
+
+  onMount(() => {
+    const loader = document.querySelector('.loader');
+    loader.style.opacity = 0;
+    const t = setTimeout(() => removeLoader(loader, t));
+    toggleResponsive();
+  });
 
   const responsive = writable(mobile);
   $: responsive.set(mobile);
