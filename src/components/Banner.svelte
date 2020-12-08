@@ -50,7 +50,7 @@
 
 <div class="banner">
   <div class="banner-container">
-    <img src="/images/3D-uv-05.jpg" alt="banner-{title}">
+    <img src="/assets/images/3D-uv-05.jpg" alt="banner-{title}">
     <h1 class="banner-caption"> {title} </h1>
   </div>
 </div>

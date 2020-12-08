@@ -64,7 +64,7 @@
   {#each [1, 2, 3, 4] as i (i)}
     <a href="/" class="item row">
       <div class="col thumbnail">
-        <img src="/images/bg1-500.webp" alt="Iki bambar">
+        <img src="/assets/images/bg1-500.webp" alt="Iki bambar">
         <span class="duration">22:12</span>
       </div>
       <div class="col caption">
@@ -78,5 +78,5 @@
 </div>
 
 <div class="text-center">
-  <a href="/" class="load-more primary-shadow"> Lihat Semua video</a>
+  <a href="/tutorial/video" class="load-more primary-shadow"> Lihat Semua video</a>
 </div>

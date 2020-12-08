@@ -61,41 +61,17 @@
   <h2> Kategori Pilihan </h2>
 
   <div class="list">
-    <a href="/"> 
-      <div class="item">
-        <img src="/images/pic2.jpg" alt="pick" />
-        <div class="caption">
-          <h3> Souvenir</h3>
-        </div>
-      </div>
-    </a>
 
-    <a href="/"> 
-      <div class="item">
-        <img src="/images/pic2.jpg" alt="pick" />
-        <div class="caption">
-          <h3> Souvenir</h3>
+    {#each [1, 2, 3, 4] as i (i)}
+      <a href="/"> 
+        <div class="item">
+          <img src="/assets/images/pic2.jpg" alt="pick" />
+          <div class="caption">
+            <h3> Kado</h3>
+          </div>
         </div>
-      </div>
-    </a>
-
-    <a href="/"> 
-      <div class="item">
-        <img src="/images/pic2.jpg" alt="pick" />
-        <div class="caption">
-          <h3> Souvenir</h3>
-        </div>
-      </div>
-    </a>
-
-    <a href="/"> 
-      <div class="item">
-        <img src="/images/pic3.jpg" alt="pick" />
-        <div class="caption">
-          <h3> Souvenir</h3>
-        </div>
-      </div>
-    </a>
+      </a>
+    {/each}
 
   </div>
 </div>

@@ -1,6 +1,6 @@
 <script>
   export let name = 'Ini produk satu';
-  export let pic = '/images/bg1-500.webp';
+  export let pic = '/assets/images/bg1-500.webp';
   export let price = 50000;
   export let city = 'Unknown';
   export let link = '';

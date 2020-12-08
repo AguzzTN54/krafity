@@ -87,7 +87,7 @@
 
 <div class="product">
   <h2> Produk Pilihan 
-    <span> <a href="/toko" class="loadmore"> Load More</a> </span>
+    <span> <a href="/katalog" class="loadmore"> Load More</a> </span>
   </h2>
   <div id="product-list1" class="splide">
     <div class="splide__track">
@@ -97,8 +97,8 @@
           <li class="splide__slide">  
             <div class="item splide__slide__container">
               <figure>
-                <img src="/images/bg1-500.webp" alt="Gambar">
-                <span class="category"> Barang Bekas </span>
+                <img src="/assets/images/bg1-500.webp" alt="Gambar">
+                <a href="/katalog/categories" class="category"> Barang Bekas </a>
               </figure>
               <div class="caption">
                 <h3>Ini nama Produk hya hiya hiyaaaaaaaa mantab bapaq</h3>

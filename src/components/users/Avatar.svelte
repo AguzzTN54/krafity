@@ -1,5 +1,5 @@
 <script>
-  export let picture = '/images/bg1-500.webp';
+  export let picture = '/assets/images/bg1-500.webp';
   export let name = 'Anonym';
   export let style = '';
 </script>

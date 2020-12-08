@@ -94,14 +94,14 @@
           <li class="splide__slide">
             <div class="video-item splide__slide__container">
               <div class="slide-picture">
-                <img src="/images/pic1.png" alt="Item 1" />
+                <img src="/assets/images/pic1.png" alt="Item 1" />
                 <a href="/" class="video-play"> <i class="material-icons">play_arrow</i></a>
                 <div class="video-caption">
                   <a href="/" class="video-title text-overflow">
                     <h3>Ini Nama Produk nya bosqueh bagus sekali bapaqe</h3>
                   </a>
-                  <a href="/blog/category/" class="category">Darwin Media</a>
-                  <a href="/blog/category/" class="category">barang bekas</a>
+                  <a href="/tutorial/categories" class="category">Darwin Media</a>
+                  <a href="/tutorial/categories" class="category">barang bekas</a>
                 </div>
               </div>
             </div>

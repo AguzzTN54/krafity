@@ -60,7 +60,7 @@
           <li class="splide__slide">
             <div class="item splide__slide__container">
               <div class="slide-picture">
-                <img src="/images/pic2.jpg" alt="Item 1" />
+                <img src="/assets/images/pic2.jpg" alt="Item 1" />
               </div>
               <div class="item-caption">
                 <a href="/" class="item-title">Darwin Arts</a>

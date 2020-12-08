@@ -102,7 +102,7 @@
 
 <section class="content" style="margin-top:20px">
 	<div class="content-header">
-		<a href="/categories/yeya" class="top-info"> <i class="material-icons">class</i> Category </a>
+		<a href="/tutorial/categories/yeya" class="top-info"> <i class="material-icons">class</i> Category </a>
 		<span class="top-info estimasi"><i class="material-icons">access_time</i> estimasi 3 jam</span>
 
 		<h1>Ini judulnya ya boquehhh</h1>
@@ -111,7 +111,7 @@
 		</div>
 	</div>
 	<div class="content-body">
-		<img src="/images/bg1-500.webp" alt="iki Gambar" class="pic-content">
+		<img src="/assets/images/bg1-500.webp" alt="iki Gambar" class="pic-content">
 
 		<p>
 			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, maiores deleniti voluptate reiciendis eos possimus labore fugiat. Veniam vero quis eius, porro facere culpa unde sunt quasi aliquam. Ut itaque perspiciatis repudiandae quaerat debitis accusamus velit! Ducimus natus minus voluptatibus modi ab maiores a ut voluptatum quibusdam atque voluptatem mollitia iure libero eos, sapiente at obcaecati iusto consequatur eveniet aut voluptas ratione? Omnis aliquam et vero laudantium iste incidunt, eum quo qui neque dolor distinctio asperiores. Earum obcaecati voluptas laudantium porro odio, dignissimos aut omnis eos iure impedit sequi consectetur. Excepturi at ipsa inventore, voluptatem minus deserunt esse expedita porro accusamus iure illum nemo amet consequuntur natus. Eum tempore amet porro? Quaerat incidunt natus ullam, aperiam laudantium quod tempora repellat laboriosam, facilis iure asperiores cupiditate magnam ut. Ab est sint nemo asperiores ad animi, labore ex quae perferendis quasi eum aspernatur adipisci fugit ipsum nobis odio, beatae unde in illum.

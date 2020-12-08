@@ -53,7 +53,7 @@
   <div class="categories">
     {#if categories.length > 0}
       {#each categories as category}
-        <a href="blog/categories/{category}" class="category-item">
+        <a href="/tutorial/categories/{category}" class="category-item">
           {category}
         </a>
       {/each}

@@ -90,8 +90,8 @@
 
 <div class="item">
   <figure>
-    <img src="/images/bg1-500.webp" alt="Gambar">
-    <span class="category"> Barang Bekas </span>
+    <img src="/assets/images/bg1-500.webp" alt="Gambar">
+    <a href="/katalog/categories" class="category"> Barang Bekas </a>
   </figure>
   <div class="caption">
     <h3>Ini nama Produk</h3>

@@ -80,11 +80,11 @@
       <li class="splide__slide">
         <div class="post-item splide__slide__container">
           <div class="slide-picture">
-            <img src="/images/pic1.png" alt="Item 1" />
+            <img src="/assets/images/pic1.png" alt="Item 1" />
           </div>
           <div class="post-caption">
-            <a href="/" class="post-title text-overflow">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-            <a href="/blog/category/" class="category">barang bekas</a>
+            <a href="/katalog/ini-produk" class="post-title text-overflow">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
+            <a href="/tutorial/categories/" class="category">barang bekas</a>
             <span class="category">1jam</span>
           </div>
         </div>
@@ -93,7 +93,7 @@
       <li class="splide__slide">
         <div class="post-item splide__slide__container">
           <div class="slide-picture">
-            <img src="/images/pic1.png" alt="Item 1" />
+            <img src="/assets/images/pic1.png" alt="Item 1" />
           </div>
           <div class="post-caption">
             <span class="post-title">Ini Nama Produk nya bosqueh</span>
@@ -105,7 +105,7 @@
       <li class="splide__slide">
         <div class="post-item splide__slide__container">
           <div class="slide-picture">
-            <img src="/images/pic1.png" alt="Item 1" />
+            <img src="/assets/images/pic1.png" alt="Item 1" />
           </div>
           <div class="post-caption">
             <span class="post-title">Ini Nama Produk nya bosqueh</span>

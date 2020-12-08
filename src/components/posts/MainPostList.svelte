@@ -81,15 +81,15 @@
   <h2> Tutorial </h2>
   <div class="main-list">
 
-    {#each [0, 2, 1, 3, 4, 5, 6] as i (i)}
+    {#each [0, 2, 1, 3, 4, 5] as i (i)}
       <div class="main-item">
         <figure>
-          <img src="/images/bg1-500.webp" alt="iki gambar">
+          <img src="/assets/images/bg1-500.webp" alt="iki gambar">
         </figure>
         <div class="caption">
           <div class="user">
             <a href="/user/siapa-ya">
-              <img src="/images/bg1-500.webp" alt="Avatar">
+              <img src="/assets/images/bg1-500.webp" alt="Avatar">
               <span>Damina Arts</span>
             </a>
           </div>

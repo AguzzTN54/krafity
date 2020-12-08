@@ -27,7 +27,7 @@
   .auth-page {
     width:100vw;
     height:100vh;
-    background-image: url(images/bg1-500.webp);
+    background-image: url(assets/images/bg1-500.webp);
     background-size: cover;
     display: flex;
     justify-content: center;

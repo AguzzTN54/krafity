@@ -77,83 +77,21 @@
 <div class="post-list splide" id="trending-post">
   <div class="splide__track">
     <ul class="splide__list">
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/images/pic2.jpg" alt="Item 1" />
-            <div class="post-caption">
-              <a href="/" class="text-overflow post-title">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-              <a href="/blog/category/" class="category">barang bekas</a>
-              <span class="category">1jam</span>
+
+      {#each [1, 2, 3, 4, 5] as i (i)}
+        <li class="splide__slide">
+          <div class="post-item splide__slide__container">
+            <div class="slide-picture">
+              <img src="/assets/images/pic2.jpg" alt="Item 1" />
+              <div class="post-caption">
+                <a href="/" class="text-overflow post-title">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
+                <a href="/tutoral/categories/" class="category">barang bekas</a>
+                <span class="category">1jam</span>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/images/pic1.png" alt="Item 1" />
-            <div class="post-caption">
-              <a href="/" class="post-title">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-              <a href="/blog/category/" class="category">barang bekas</a>
-              <span class="category">1jam</span>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/images/bg1-500.webp" alt="Item 1" />
-            <div class="post-caption">
-              <a href="/" class="post-title">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-              <a href="/blog/category/" class="category">barang bekas</a>
-              <span class="category">1jam</span>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/images/pic1.png" alt="Item 1" />
-          </div>
-          <!-- <div class="post-caption">
-            <a href="/" class="post-title">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-            <a href="/blog/category/" class="category">barang bekas</a>
-            <span class="category">1jam</span>
-          </div> -->
-        </div>
-      </li>
-
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/images/pic1.png" alt="Item 1" />
-          </div>
-          <!-- <div class="post-caption">
-            <a href="/" class="post-title">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-            <a href="/blog/category/" class="category">barang bekas</a>
-            <span class="category">1jam</span>
-          </div> -->
-        </div>
-      </li>
-
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/images/pic1.png" alt="Item 1" />
-          </div>
-          <!-- <div class="post-caption">
-            <a href="/" class="post-title">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-            <a href="/blog/category/" class="category">barang bekas</a>
-            <span class="category">1jam</span>
-          </div> -->
-        </div>
-      </li>
+        </li>
+      {/each}
       
     </ul>
   </div>

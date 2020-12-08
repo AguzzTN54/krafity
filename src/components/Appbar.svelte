@@ -37,11 +37,11 @@
     {
       title: 'Toko',
       icon: 'store',
-      url: '/toko',
+      url: '/katalog',
     },
     {
       title: 'Tutorial',
-      icon: '',
+      icon: 'streetview',
       url: 'tutorial',
     },
   ];
@@ -49,13 +49,13 @@
   const drawerItem = [
     {
       title: 'Tutorial',
-      icon: 'store',
+      icon: 'streetview',
       url: '/tutorial',
     },
     {
       title: 'Toko',
       icon: 'store',
-      url: '/toko',
+      url: '/katalog',
     },
   ];
 </script>
@@ -81,6 +81,7 @@
     display: inline-block;
     margin: 0 5px;
     text-transform: uppercase;
+    font-size:.9rem;
   }
   .nav-link:hover {
     opacity: 1;
@@ -132,7 +133,7 @@
     <Section>
       <Title class="text-center brand-logo">
         <a href="/" class="site-logo">
-          <img src="/logo/krafity-logo.svg" alt="Krafity Logo">
+          <img src="/assets/logo/krafity-logo.svg" alt="Krafity Logo">
         </a>
       </Title>
     </Section>
