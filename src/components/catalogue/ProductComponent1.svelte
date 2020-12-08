@@ -87,7 +87,7 @@
 
 <div class="product">
   <h2> Produk Pilihan 
-    <span> <a href="/" class="loadmore"> Load More</a> </span>
+    <span> <a href="/toko" class="loadmore"> Load More</a> </span>
   </h2>
   <div id="product-list1" class="splide">
     <div class="splide__track">
