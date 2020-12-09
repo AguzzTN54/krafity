@@ -1,3 +1,20 @@
+<script>
+  import axios from 'axios';
+  import Skeleton from '../utils/Skeleton.svelte';
+
+  const getData = async () => {
+    try {
+      const dt = await axios.get('/dummy/tutorials.json');
+      if (dt.status === 200) return dt.data;
+      throw new Error('Terjadi Kesalahan saat melakukan fetcing');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const tutorials = getData();
+</script>
+
 <style>
   .main-item {
     display: flex;
@@ -24,12 +41,12 @@
     font-weight: bold;
   }
 
-  .user a{
+  .user a, .link {
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
-  .user img {
+  .user img, :global(.avatar) {
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -81,28 +98,56 @@
   <h2> Tutorial </h2>
   <div class="main-list">
 
-    {#each [0, 2, 1, 3, 4, 5] as i (i)}
-      <div class="main-item">
-        <figure>
-          <img src="/assets/images/bg1-500.webp" alt="iki gambar">
-        </figure>
-        <div class="caption">
-          <div class="user">
-            <a href="/user/siapa-ya">
-              <img src="/assets/images/bg1-500.webp" alt="Avatar">
-              <span>Damina Arts</span>
-            </a>
-          </div>
+    {#await tutorials}
+      {#each [1, 2, 3, 4, 5] as i (i)}
+        <div class="main-item" id="skln-{i}">
+          <figure>
+            <Skeleton width="100%" height="100%" />
+          </figure>
+          <div class="caption">
+            <div class="user">
+              <span class="link">
+                <Skeleton className="avatar"/>
+                <Skeleton width="70px" height="12px"/>
+              </span>
+            </div>
 
-          <h3 class="text-overflow"><a href="/tutorial/uhuk-uhuk" rel="prefetch">Ini judul post nya ya bapaq :D saya idak tahu apa apa</a></h3>
-          <p class="short-desc text-overflow">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident tempore doloribus in eaque qui aut tenetur et asperiores nesciunt enim!
-          </p>
-          <span class="info">66 Comments</span>
-          <span class="info">1.5 jam</span>
+            <Skeleton width="180px" height="18px"/>
+            <p class="short-desc text-overflow">
+              <Skeleton width="80%" height="8px"/>
+              <Skeleton width="45%" height="8px"/>
+            </p>
+            <span class="info"><Skeleton width="50px" height="10px"/></span>
+            <span class="info"><Skeleton width="50px" height="10px"/></span>
+          </div>
         </div>
-      </div>
-    {/each}
+      {/each}
+
+    {:then data} 
+      {#each data as { id, title, slug, user, thumbnail, content, views } (id)}
+        <div class="main-item">
+          <figure>
+            <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={thumbnail} alt={title}>
+          </figure>
+          <div class="caption">
+            <div class="user">
+              <a href="/user/siapa-ya">
+                <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={user.avatar} alt="Avatar">
+                <span>{user.name}</span>
+              </a>
+            </div>
+
+            <h3 class="text-overflow"><a href="/tutorial/{slug}" rel="prefetch">{title}</a></h3>
+            <p class="short-desc text-overflow">
+              {content.replace(/(<([^>]+)>)/ig, '').substring(0, 200)}
+            </p>
+            <span class="info">{views} Views</span>
+            <span class="info">1.5 jam</span>
+          </div>
+        </div>
+      {/each}
+
+    {/await}
 
   </div>
 

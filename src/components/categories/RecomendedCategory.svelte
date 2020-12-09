@@ -1,11 +1,21 @@
-<style>
-  /* .recomended {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 0 15px;
-    border-radius: 10px;
-  } */
+<script>
+  import axios from 'axios';
+  import Skeleton from '../utils/Skeleton.svelte';
 
+  const getData = async () => {
+    try {
+      const { data, status } = await axios.get('/dummy/tutorials/categories/recomended.json');
+      if (status === 200) return data;
+      throw new Error('Terjadi Kesalahan Saat melakukan Fetch');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const category = getData();
+</script>
+
+<style>
   h2 {
     font-size: 1.3rem;
     text-align: center;
@@ -39,6 +49,10 @@
     background-image: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0));
   }
 
+  .preload > .item::after {
+    content: none;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -62,16 +76,29 @@
 
   <div class="list">
 
-    {#each [1, 2, 3, 4] as i (i)}
-      <a href="/"> 
-        <div class="item">
-          <img src="/assets/images/pic2.jpg" alt="pick" />
-          <div class="caption">
-            <h3> Kado</h3>
+    {#await category}
+      {#each [1, 2, 3, 4] as i (i)}
+        <span class="preload"> 
+          <div class="item">
+            <Skeleton width="100%" height="100%" />
           </div>
-        </div>
-      </a>
-    {/each}
+        </span>
+      {/each}
+
+    {:then data} 
+      
+      {#each data as { title, slug, thumbnail} (slug)}
+        <a href="/tutorial/categories/{slug}"> 
+          <div class="item">
+            <img src={thumbnail} alt={title} />
+            <div class="caption">
+              <h3> {title} </h3>
+            </div>
+          </div>
+        </a>
+      {/each}
+
+    {/await}
 
   </div>
 </div>

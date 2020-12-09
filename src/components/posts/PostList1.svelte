@@ -1,7 +1,9 @@
 <script>
   import { onMount } from 'svelte';
+  import axios from 'axios';
+  import Skeleton from '../utils/Skeleton.svelte';
 
-  onMount(async () => {
+  const splide = async () => {
     const { default: Splide } = await import('@splidejs/splide');
     new Splide('#splide', {
       perPage: 4,
@@ -14,7 +16,31 @@
         550: { perPage: 1, gap: '1rem' },
       },
     }).mount();
-  });
+  };
+
+  onMount(() => splide());
+
+  const getData = async () => {
+    try {
+      const dataReturn = [];
+      const arData = [];
+      const { status, data } = await axios('/dummy/tutorials.json');
+      for (let i = 0; i < 6; i++) {
+        const rand = Math.floor(Math.random() * (data.length - 1) + 1);
+        // eslint-disable-next-line no-continue
+        if (arData.includes(rand)) continue;
+        arData.push(rand);
+        dataReturn.push(data[rand]);
+      }
+      splide();
+      if (status === 200) return dataReturn;
+      throw new Error('Gagal Melakukan Fetxh Data');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const tutorials = getData();
 </script>
 
 <style>
@@ -41,6 +67,7 @@
   .slide-picture {
     flex-basis: 35%;
     margin-right:5px;
+    height:80px;
   }
   .post-caption {
     flex-basis: 65%;
@@ -77,43 +104,41 @@
 <div class="post-list splide" id="splide">
   <div class="splide__track">
     <ul class="splide__list">
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/assets/images/pic1.png" alt="Item 1" />
-          </div>
-          <div class="post-caption">
-            <a href="/katalog/ini-produk" class="post-title text-overflow">Ini Nama Produk nya bosqueh bagus sekali bapaqe</a>
-            <a href="/tutorial/categories/" class="category">barang bekas</a>
-            <span class="category">1jam</span>
-          </div>
-        </div>
-      </li>
+      {#await tutorials}
+        {#each [1, 2, 3, 4] as i (i)}
+          <li class="splide__slide">
+            <div class="post-item splide__slide__container">
+              <div class="slide-picture">
+                <Skeleton width="100%" height="100%" style="margin:0"/>
+              </div>
+              <div class="post-caption">
+                <span class="post-title"><Skeleton width="80%" height="12px" /></span>
+                <span class="post-title"><Skeleton width="50%" height="12px" /></span>
+                <span class="category"><Skeleton width="50px" height="8px" /> </span>
+                <span class="category"><Skeleton width="30px" height="8px" /></span>
+              </div>
+            </div>
+          </li>
+        {/each}
 
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/assets/images/pic1.png" alt="Item 1" />
-          </div>
-          <div class="post-caption">
-            <span class="post-title">Ini Nama Produk nya bosqueh</span>
-            <span class="category">barang bekas</span>
-          </div>
-        </div>
-      </li>
+      {:then data}
+  
+        {#each data as {id, title, slug, thumbnail, estimasi, category} (id)}
+          <li class="splide__slide">
+            <div class="post-item splide__slide__container">
+              <div class="slide-picture">
+                <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={thumbnail} alt={title} />
+              </div>
+              <div class="post-caption">
+                <a href="/tutorial/{slug}" class="post-title text-overflow">{title}</a>
+                <a href="/tutorial/categories/{category.slug}" class="category">{category.title}</a>
+                <span class="category">{estimasi}</span>
+              </div>
+            </div>
+          </li>
+        {/each}
+      {/await}
 
-      <li class="splide__slide">
-        <div class="post-item splide__slide__container">
-          <div class="slide-picture">
-            <img src="/assets/images/pic1.png" alt="Item 1" />
-          </div>
-          <div class="post-caption">
-            <span class="post-title">Ini Nama Produk nya bosqueh</span>
-            <span class="category">barang bekas</span>
-          </div>
-        </div>
-      </li>
     </ul>
-
   </div>
 </div>
