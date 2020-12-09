@@ -1,5 +1,6 @@
 <script>
   import '../theme/style.scss';
+  import 'lazysizes';
   import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
   import { onMount, setContext } from 'svelte';
   import { writable } from 'svelte/store';
