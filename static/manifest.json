@@ -3,7 +3,7 @@
 	"name": "Krafity",
 	"lang": "en",
 	"description": "Share Your Creativity",
-	"start_url": "https://krafity.vercel.app",
+	"start_url": "/",
 	"background_color": "#e60058",
 	"theme_color": "#e60058",
 	"dir": "ltr",
