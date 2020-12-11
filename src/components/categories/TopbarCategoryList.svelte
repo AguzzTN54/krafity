@@ -1,7 +1,18 @@
 <script>
-  import data from '../../dummy/categories.json';
+  import axios from 'axios';
+  import Skeleton from '../utils/Skeleton.svelte';
 
-  const { categories } = data;
+  const getData = async () => {
+    try {
+      const { data, status } = await axios.get('/dummy/tutorials/categories.json');
+      if (status === 200) return data;
+      throw new Error('Terjadi Kesalahan Saat melakukan fetch');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const categories = getData();
 </script>
 
 <style>
@@ -51,15 +62,24 @@
 
 <div class="top-bar-categories">
   <div class="categories">
-    {#if categories.length > 0}
-      {#each categories as category}
-        <a href="/tutorial/categories/{category}" class="category-item">
-          {category}
-        </a>
+    
+    {#await categories}
+      {#each [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] as i (i)}
+        <Skeleton width="50px" height="15px"/>
       {/each}
-    {:else}
-      <span>no Data found</span>
-    {/if}
+      
+    {:then data}
+      
+      {#if data.length > 0}
+        {#each data as { slug, title } (slug)}
+          <a href="/tutorial/categories/{slug}" class="category-item">
+            {title}
+          </a>
+        {/each}
+      {:else}
+        <span>no Data found</span>
+      {/if}
+    {/await}
 
   </div>
 </div>
