@@ -1,9 +1,9 @@
 <script>
 	import '../theme/style.scss';
 	import { TopbarCategoryList, RecomendedCategory } from '../components/categories/index';
-	import { MainPostList, PostList1, PostList2 } from '../components/posts/index';
+	import { MainPostList, PostList1 } from '../components/posts/index';
 	import { TagComponent1 } from '../components/tags/index';
-	import { ProductComponent1 } from '../components/catalogue/index';
+	import { FeaturedProducts, ProductComponent1 } from '../components/catalogue/index';
 	import { PengrajinAvatar } from '../components/users/index';
 	import { VideoList, VideoSidebar } from '../components/videos/index';
 </script>
@@ -29,7 +29,7 @@
 
 <TopbarCategoryList />
 <PostList1 />
-<PostList2 />
+<FeaturedProducts />
 
 <section class="row row-1">
 	<div class="col">
