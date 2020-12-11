@@ -9,6 +9,7 @@
 </script>
 
 <script>
+	import { stores } from '@sapper/app';
 	import Footer from '../../components/Footer.svelte';
 	import { Avatar } from '../../components/users/index';
 	import { ProductLandscape } from '../../components/catalogue/index';
@@ -18,6 +19,9 @@
 	  id, title, category, user, content, estimasi, thumbnail,
 	} = post.data;
 	const metaDescription = content.replace(/(<([^>]+)>)/ig, '').substring(0, 200);
+
+	const { page } = stores();
+	const { host, path } = $page;
 </script>
 
 <style>
@@ -108,13 +112,13 @@
 	
 	<link rel="fluid-icon" href={thumbnail} title={title}/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="https://krafity.vercel.app/"/>
+	<meta property="og:url" content="http://{host}{path}"/>
 	<meta property="og:title" content={title}/>
 	<meta property="og:description" content={metaDescription}/>
 	<meta property="og:image" content={thumbnail}/>
 
 	<meta property="twitter:card" content="summary_large_image"/>
-	<meta property="twitter:url" content="https://krafity.vercel.app/"/>
+	<meta property="twitter:url" content="http://{host}{path}"/>
 	<meta property="twitter:title" content={title}/>
 	<meta property="twitter:description" content={metaDescription}/>
 	<meta property="twitter:image" content={thumbnail}/>
