@@ -90,7 +90,7 @@
       {#each data as { title, slug, thumbnail} (slug)}
         <a href="/tutorial/categories/{slug}"> 
           <div class="item">
-            <img src={thumbnail} alt={title} />
+            <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={thumbnail} alt={title} />
             <div class="caption">
               <h3> {title} </h3>
             </div>

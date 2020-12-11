@@ -30,7 +30,7 @@
 
   const getData = async () => {
     try {
-      const { data, status } = await axios.get('/dummy/katalog/pengrajin.json');
+      const { data, status } = await axios.get('/dummy/katalog/products.json');
       splide();
       if (status === 200) return data;
       throw new Error('Terjadi Kesalahan Saat melakukan Fetch');

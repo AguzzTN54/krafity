@@ -1,7 +1,9 @@
 <script>
   import { onMount } from 'svelte';
+  import axios from 'axios';
+  import { Skeleton } from '../utils/index';
 
-  onMount(async () => {
+  const splide = async () => {
     const { default: Splide } = await import('@splidejs/splide');
     const { default: URLHash } = await import('@splidejs/splide-extension-url-hash');
 
@@ -22,7 +24,22 @@
         500: { perPage: 1 },
       },
     }).mount({ URLHash });
-  });
+  };
+
+  onMount(() => splide());
+
+  const getData = async () => {
+    try {
+      const { data, status } = await axios.get('/dummy/katalog/products.json');
+      splide();
+      if (status === 200) return data;
+      throw new Error('Terjadi Kesalahan Saat melakukan fetch');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const pengrajin = getData();
 </script>
 
 <style>
@@ -56,18 +73,35 @@
     <div class="splide__track">
       <ul class="splide__list">
 
-        {#each [0, 1, 2, 3, 4, 5] as i (i)}
-          <li class="splide__slide">
-            <div class="item splide__slide__container">
-              <div class="slide-picture">
-                <img src="/assets/images/pic2.jpg" alt="Item 1" />
+        {#await pengrajin}
+          {#each [0, 1, 2, 3, 4, 5] as i (i)}
+            <li class="splide__slide">
+              <div class="item splide__slide__container">
+                <div class="slide-picture">
+                  <Skeleton width="100%" height="100%" style="margin:0;"/>
+                </div>
+                <div class="item-caption">
+                  <span href="/" class="item-title"><Skeleton height="10px" width="100px" /></span>
+                </div>
               </div>
-              <div class="item-caption">
-                <a href="/" class="item-title">Darwin Arts</a>
-              </div>
-            </div>
-          </li>
-        {/each}
+            </li>
+          {/each}
+
+        {:then data}
+            
+            {#each data as { id, user } (id)}
+              <li class="splide__slide">
+                <div class="item splide__slide__container">
+                  <div class="slide-picture">
+                    <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={user.avatar} alt={user.name} />
+                  </div>
+                  <div class="item-caption">
+                    <a href="/user/{user.username}}" class="item-title">{user.name}</a>
+                  </div>
+                </div>
+              </li>
+            {/each}
+        {/await}
 
       </ul>
     </div>

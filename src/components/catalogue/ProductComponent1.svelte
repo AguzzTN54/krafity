@@ -1,8 +1,9 @@
 <script>
   import { onMount } from 'svelte';
-  import { Star } from '../utils/index';
+  import axios from 'axios';
+  import { Skeleton, Star } from '../utils/index';
 
-  onMount(async () => {
+  const splide = async () => {
     const { default: Splide } = await import('@splidejs/splide');
     const { default: URLHash } = await import('@splidejs/splide-extension-url-hash');
 
@@ -21,10 +22,28 @@
         500: { perPage: 2, gap: '1rem' },
       },
     }).mount({ URLHash });
-  });
+  };
+
+  onMount(() => splide());
+
+  const getData = async () => {
+    try {
+      const { data, status } = await axios.get('/dummy/katalog/alat-bahan.json');
+      splide();
+      if (status === 200) return data;
+      throw new Error('Terjadi Kesalahan saat melakukan fetch');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  const alatBahan = getData();
 </script>
 
 <style>
+  #product-list1 {
+    height: 270px;
+    overflow: hidden;
+  }
   .product {
     padding: 0 5%;
   }
@@ -93,22 +112,42 @@
     <div class="splide__track">
       <ul class="splide__list">
 
-        {#each [0, 1, 2, 3, 4, 5, 6, 7, 8] as i (i)}
-          <li class="splide__slide">  
-            <div class="item splide__slide__container">
-              <figure>
-                <img src="/assets/images/bg1-500.webp" alt="Gambar">
-                <a href="/katalog/categories" class="category"> Barang Bekas </a>
-              </figure>
-              <div class="caption">
-                <h3>Ini nama Produk hya hiya hiyaaaaaaaa mantab bapaq</h3>
-                <div class="price">Rp5000,-</div>
-                <span class="rating"> <Star rate={5} reviewCount={5} /> </span>
+        {#await alatBahan}
+          {#each [0, 1, 2, 3, 4, 5] as i (i)}
+            <li class="splide__slide">
+              <div class="item splide__slide__container">
+                <figure>
+                  <Skeleton width="100%" height="100%"/>
+                  <span class="category"> <Skeleton width="70px" height="10px" /></span>
+                </figure>
+                <div class="caption">
+                  <Skeleton width="90%" height="11px" />
+                  <Skeleton width="60%" height="11px" />
+                  <div class="price"><Skeleton width="50px" height="13px" style="margin-top:1rem" /></div>
+                  <span class="rating"> <Skeleton width="70px" height="8px" style="margin-top:1.2rem" /></span>
+                </div>
               </div>
-            </div>
-          </li>
-        {/each}
+            </li>
+          {/each}
 
+        {:then data}
+
+          {#each data as { id, title, slug, picture, price, rating, category } (id)}
+            <li class="splide__slide">  
+              <div class="item splide__slide__container">
+                <figure>
+                  <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={picture[0]} alt={title}>
+                  <a href="/katalog/categories/{category.slug}}" class="category"> {category.title} </a>
+                </figure>
+                <div class="caption">
+                  <h3><a href="/katalog/{slug}" rel="prefetch">{title}</a></h3>
+                  <div class="price">Rp{price},-</div>
+                  <span class="rating"> <Star rate={rating} /> </span>
+                </div>
+              </div>
+            </li>
+          {/each}
+        {/await}
       </ul>
     </div>
   </div>
