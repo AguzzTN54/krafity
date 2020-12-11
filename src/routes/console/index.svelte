@@ -1,1 +1,5 @@
-<div> Masuk Console</div>
+<script>
+  import UnderConstruction from '../../components/UnderConstruction.svelte';
+</script>
+
+<UnderConstruction />
