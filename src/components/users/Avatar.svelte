@@ -1,6 +1,7 @@
 <script>
-  export let picture = '/assets/images/bg1-500.webp';
+  export let avatar = '/assets/images/bg1-500.webp';
   export let name = 'Anonym';
+  export let username = '';
   export let style = '';
 </script>
 
@@ -26,10 +27,10 @@
 </style>
 
 <div class="container" style={style}>
-  <div class="avatar">
-    <img src={picture} alt="{name} Avatar">
+  <a class="avatar" href="{username !== '' ? `/user/${username}` : ''}">
+    <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={avatar} alt="{name} Avatar">
     <span class="name"> {name} </span>
-  </div>
+  </a>
   <div class="save">
     <span class="share"> Share</span>
     <span>oke</span>
