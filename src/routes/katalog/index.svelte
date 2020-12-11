@@ -1,6 +1,17 @@
+<script context="module">
+  export async function preload() {
+    const res = await this.fetch('/dummy/katalog.json');
+    const katalog = res.json();
+    if (res.status === 200) return { katalog };
+    this.error(res.status, res.message);
+  }
+</script>
+
 <script>
   import Banner from '../../components/Banner.svelte';
   import { ProductComponent2 } from '../../components/catalogue/index';
+
+  export let katalog;
 </script>
 
 <style>
@@ -22,16 +33,16 @@
 <Banner title="Toko" />
 <div class="shop-content" id="product">
   <div class="list">
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
-    <ProductComponent2 />
+    {#await katalog}
+      <ProductComponent2 skeleton />
+      <ProductComponent2 skeleton />
+      <ProductComponent2 skeleton />
+      <ProductComponent2 skeleton />
+      <ProductComponent2 skeleton />
+    {:then dataList}
+      {#each dataList as data (data.id)}
+      <ProductComponent2 {data} />
+      {/each}
+    {/await}
   </div>
 </div>

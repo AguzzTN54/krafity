@@ -1,5 +1,11 @@
 <script>
-  import { Star } from '../utils/index';
+  import { Skeleton, Star } from '../utils/index';
+
+  export let skeleton;
+  export let data = {};
+  const {
+    category, picture, price, rating, title, user, slug,
+  } = data;
 </script>
 
 <style>
@@ -89,14 +95,29 @@
 </style>
 
 <div class="item">
-  <figure>
-    <img src="/assets/images/bg1-500.webp" alt="Gambar">
-    <a href="/katalog/categories" class="category"> Barang Bekas </a>
-  </figure>
-  <div class="caption">
-    <h3>Ini nama Produk</h3>
-    <span class="avatar"> <img src="/assets/images/thumbnail.svg" alt="Avatar"> Avatar</span>
-    <div class="price">Rp5000,-</div>
-    <span class="rating"> <Star rate="3" /> </span>
-  </div>
+  {#if skeleton}
+
+    <figure>
+      <Skeleton width="100%" height="100%" style="margin:0 !important" />
+    </figure>
+    <div class="caption">
+      <Skeleton width="90%" height="10px" />
+      <Skeleton width="60%" height="10px" />
+      <span class="avatar"> <Skeleton width="15px" height="15px" style="display: inline-block;border-radius:100%;margin:0;" /> <Skeleton width="50px" height="8px" style="display:inline-block" /></span>
+      <div class="price"><Skeleton width="70%" height="13px" style="margin-top:.6rem" /></div>
+      <span class="rating"> <Skeleton width="50%" height="8px" style="margin-top:.6rem" /> </span>
+    </div>
+
+  {:else}
+    <figure>
+      <img class="lazyload" data-src={picture[0]} src="/assets/images/thumbnail.svg" alt={title}>
+      <a href="/katalog/categories/{category.slug}" class="category"> {category.title} </a>
+    </figure>
+    <div class="caption">
+      <h3><a href="/katalog/{slug}"> {title} </a></h3>
+      <a href="/user/{user.username}" class="avatar"> <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={user.avatar} alt="Avatar"> {user.name}</a>
+      <div class="price">Rp{price},-</div>
+      <span class="rating"> <Star rate={rating} /> </span>
+    </div>
+  {/if}
 </div>
