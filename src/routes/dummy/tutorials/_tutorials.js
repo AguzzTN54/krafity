@@ -136,7 +136,7 @@ const tutors = [
   {
     id: 4,
     title: 'Kerajinan Bunga dari Sedotan',
-    slug: '',
+    slug: 'kerajinan-bunga-sedotan',
     thumbnail: 'https://i1.wp.com/bukabukumu.com/wp-content/uploads/2019/11/Bunga-dari-sedotan-plastik.jpg?resize=768%2C432&ssl=1',
     views: 32,
     estimasi: '1 jam',
