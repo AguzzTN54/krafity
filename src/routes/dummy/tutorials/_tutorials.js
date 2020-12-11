@@ -7,11 +7,12 @@ const tutors = [
     views: 12,
     estimasi: '2 jam',
     category: {
-      title: 'Barang Bekas',
-      slug: 'barang-bekas',
+      title: 'Barang pakai',
+      slug: 'barang-pakai',
     },
     user: {
       name: 'DuniaQ',
+      username: 'duniaq',
       avatar: '',
     },
     content: `<h2>BAHAN DAN PERALATAN YANG DIBUTUHKAN : </h2>
@@ -39,8 +40,8 @@ const tutors = [
   },
   {
     id: 2,
-    title: 'Kerajinan Botol dari Botol Bekas',
-    slug: 'kerajinan-botol-dari-botol-bekas',
+    title: 'Kerajinan Poshon dari Botol Bekas',
+    slug: 'kerajinan-pohon-dari-botol-bekas',
     thumbnail: 'https://www.duniaq.com/wp-content/uploads/2020/06/Cara-Membuat-Kerajinan-Tangan-dari-Botol-Bekas-Air-Mineral.jpg',
     views: 41,
     estimasi: '1.5 jam',
@@ -50,6 +51,7 @@ const tutors = [
     },
     user: {
       name: 'DuniaQ',
+      username: 'duniaq',
       avatar: '',
     },
     content: `<h2>BAHAN DAN PERALATAN YANG DIBUTUHKAN :</h2>
@@ -90,6 +92,7 @@ const tutors = [
     },
     user: {
       name: 'Bumiayu',
+      username: 'bumiayu',
       avatar: '',
     },
     content: `
@@ -100,12 +103,12 @@ const tutors = [
       </li> Tempat pensil </li>
       <li> Miniatur rumah </li>
       <li> Miniatur alat transportasi</li>
-
+    </ul>
     <p> Salah satu contohnya yaitu kerajinan lampu hias berbahan dasar kayu bekas dari stik es krim, kerajinan yang unik ini memiliki bentuk yang sangat cantik untuk dinikmati dan mempercantik sudut ruangan kalian. </p>
     
     <p> Kalian mungkin mau bertanya di mana bisa membeli lampu hias cantik ini. Jadi saya akan kasih kabar baik untuk kalian, bahwa kalian tidak usah mengeluarkan uang banyak-banyak untuk bisa memiliki lampu cantik ini, karena bisa kalian buat sendiri. </p>
     
-    <p> <strong> Bahan dan peralatan yang harus dipersiapkan seperti: <strong> <p>
+    <p> <strong> Bahan dan peralatan yang harus dipersiapkan seperti: </strong> <p>
     <ul>
       <li> Siapkan stik es krim </li>
       <li> Gunting </li>
@@ -115,7 +118,7 @@ const tutors = [
     </ul>
     <h2> Cara membuat </h2>
     <img src="https://i1.wp.com/bukabukumu.com/wp-content/uploads/2019/11/Lampu-Hias-dari-Stik-Es-Krim-1.jpg?resize=768%2C432&ssl=1" alt="Contoh Satu">
-    <ul>
+    <ol>
       <li> Kalian letakkan stik es krim sebanyak dua secara sejajar. </li>
       <li> Lalu beri lem pada tiap-tiap ujung dari stik tersebut. </li>
       <li> Setelah itu, letakkan stik es krim yang tadi sudah diberi lem sampai menyambung dua stik yang sejajar tadi (pastikan kalian meletakkannya dalam posisi tegak). </li>
@@ -128,7 +131,7 @@ const tutors = [
       <li> Buatlah jembatan dengan cara menempelkan satu stik es krim pada kedua ujung dari alas secara melintang. Kedua stik ini memiliki fungsi sebagai tatakan  yang membuat stik tidak akan menempel secara langsung ke permukaan meja. </li>
       <li> Berikan lubang pada bagian stiok untuk tempat lampu. </li>
       <li> Kemudian kalian pasang lampu dan penutup lampu yang berupa sebuah lengkungan yang sudah kalian buat tadi. </li>
-    </ul>`,
+    </ol>`,
   },
   {
     id: 4,
@@ -142,7 +145,8 @@ const tutors = [
       slug: 'barang-bekas',
     },
     user: {
-      name: '',
+      name: 'DuniaQ',
+      username: 'duniaq',
       avatar: '',
     },
     content: `<h2> Sudah banyak sekali orang yang mengerti mengenai kerajinan membuat bunga.Jika kalian sudah tau penggunaan sedotan ini untuk dijadikan bentuk bunga, ternyata bisa menghasilkan sebuah kreasi yang unik lho.</h2>
@@ -179,11 +183,12 @@ const tutors = [
     views: 21,
     estimasi: '1 jam',
     category: {
-      title: 'Plastik',
-      slug: 'plastik',
+      title: 'Souvenir',
+      slug: 'souvenir',
     },
     user: {
       name: 'Rikka',
+      username: 'erikarika',
       avatar: '',
     },
     content: `<img src="https://i0.wp.com/bukabukumu.com/wp-content/uploads/2019/11/Bingkai-foto-dari-sedotan.jpg?w=480&ssl=1" alt="Kalung Sedotan">
@@ -219,6 +224,7 @@ const tutors = [
     },
     user: {
       name: 'Duniaq',
+      username: 'duniaq',
       avatar: '',
     },
     content: `<img src="https://www.duniaq.com/wp-content/uploads/2020/06/KERAJINAN-TANGAN-KERANJANG-DARI-KORAN-BEKAS.jpg" alt="Hiyahya">
@@ -246,11 +252,12 @@ const tutors = [
     views: 14,
     estimasi: '2 jam',
     category: {
-      title: 'Barang Bekas',
-      slug: 'barang-bekas',
+      title: 'Barang Pakai',
+      slug: 'barang-pakai',
     },
     user: {
-      name: 'Pejuang',
+      name: 'Pejuang Keasi',
+      username: 'pjgkraft',
       avatar: '',
     },
     content: `<img src="https://www.duniaq.com/wp-content/uploads/2020/06/KERAJINAN-TANGAN-JAM-DINDING-DARI-KORAN-BEKAS.jpg" alt="Kerajinan Korang">
@@ -286,11 +293,12 @@ const tutors = [
     views: 11,
     estimasi: '30 menit',
     category: {
-      title: 'karton',
-      slug: 'karton',
+      title: 'Dekorasi',
+      slug: 'dekorasi',
     },
     user: {
       name: 'Main Blowing',
+      username: 'mainblowing',
       avatar: '',
     },
     content: `<img src="https://www.duniaq.com/wp-content/uploads/2016/02/Membuat-lampu-gnatung-dari-kardus-bekas.jpg" alt="Lampu Karton">
@@ -326,6 +334,7 @@ const tutors = [
     },
     user: {
       name: '',
+      username: '',
       avatar: '',
     },
     products: [
@@ -343,7 +352,8 @@ const tutors = [
 
 const tutorials = tutors.map((tutor) => {
   const tutorial = tutor;
-  tutorial.content = tutor.content.replace(/^\t{3}/gm, '');
+  tutorial.content = tutor.content.replace(/^\t{3}/gm, '')
+    .replace(/<img src="/gm, '<img class="lazyload" src="/assets/images/thumbnail.svg" data-src="');
   return tutorial;
 }).filter((v) => !!v.id);
 
