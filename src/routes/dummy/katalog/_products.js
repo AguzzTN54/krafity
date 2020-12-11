@@ -6,6 +6,7 @@ const products = [
     views: 12,
     price: 2500000,
     rating: 4.4,
+    type: 'product',
     category: {
       title: 'Barang Pakai',
       slug: 'barang-pakai',
@@ -37,6 +38,7 @@ const products = [
     views: 12,
     price: 1300000,
     rating: 4.4,
+    type: 'product',
     category: {
       title: 'Dekorasi',
       slug: 'dekorasi',
@@ -90,6 +92,7 @@ const products = [
     slug: '',
     views: 124,
     price: 100000,
+    type: 'product',
     rating: 4.4,
     category: {
       title: 'Barang Pakai',
@@ -114,12 +117,227 @@ const products = [
     description: '',
   },
   {
+    id: 10,
+    title: 'Gunting Kertas Sedang Serbaguna Stainless Steel Nasa',
+    slug: 'gunting-kertas-nasa',
+    views: 303,
+    price: 10000,
+    rating: 4.4,
+    type: 'bahan',
+    category: {
+      title: 'Barang Pakai',
+      slug: 'barang-pakai',
+    },
+    user: {
+      name: 'Ragnarok',
+      username: 'ragnarok',
+      avatar: '',
+      city: 'Lumajang',
+      role: 'regular',
+    },
+    picture: [
+      'https://s0.bukalapak.com/img/08789300331/large/Gunting_Kertas_Sedang_Serbaguna_Stainless_Steel_Nasa___Biru.jpg',
+    ],
+    shop: [
+      {
+        name: 'Bukalapak',
+        url: '',
+      },
+    ],
+    description: '',
+  },
+  {
+    id: 11,
+    title: 'Kertas Lipat / Origami Paper',
+    slug: 'kertas-lipat-origami-paper',
+    views: 303,
+    price: 10000,
+    rating: 4.4,
+    type: 'bahan',
+    category: {
+      title: 'Aksesoris',
+      slug: 'aksesoris',
+    },
+    user: {
+      name: 'GT Store',
+      username: 'gtstore',
+      avatar: '',
+      city: 'Jakarta',
+      role: 'regular',
+    },
+    picture: [
+      'https://cf.shopee.co.id/file/1f6a90ed75316b01f0cc1551395a632d',
+    ],
+    shop: [
+      {
+        name: 'Bukalapak',
+        url: '',
+      },
+    ],
+    description: 'Kertas Origami dua sisi',
+  },
+  {
+    id: 12,
+    title: 'Lem Rajawali Putih 800gram',
+    slug: 'lem-rajawali',
+    views: 33,
+    price: 14000,
+    rating: 4.4,
+    type: 'bahan',
+    category: {
+      title: 'Meuble',
+      slug: 'meuble',
+    },
+    user: {
+      name: 'GT Store',
+      username: 'gtstore',
+      avatar: '',
+      city: 'Jakarta',
+      role: 'regular',
+    },
+    picture: [
+      'https://ecs7.tokopedia.net/img/cache/700/product-1/2018/1/20/0/0_53bef66f-aeca-4277-b252-9bfc9fddd40d_780_874.jpg',
+    ],
+    shop: [
+      {
+        name: 'Tokopedia',
+        url: '',
+      },
+    ],
+    description: 'Dapat digunakan untuk membuat patung',
+  },
+  {
+    id: 13,
+    title: 'Malam Plastisin',
+    slug: 'lem-rajawali',
+    views: 33,
+    price: 14000,
+    rating: 4.4,
+    type: 'bahan',
+    category: {
+      title: 'Mainan',
+      slug: 'mainan',
+    },
+    user: {
+      name: 'GT Store',
+      username: 'gtstore',
+      avatar: '',
+      city: 'Sleman',
+      role: 'regular',
+    },
+    picture: [
+      'https://lh3.googleusercontent.com/proxy/KQQl5xDfFyqiICxxZuTiH8hNpMFGlQ3e4URDF80pQppHPXYSHmmBH-KIJedpNP2K5dS5gI_gp6QK1j3a15FCysNzK7Onmb-unUVsRAYzgPF-Xlh5QUtZ83GRDVAliPI0M-FLKBjV_W7KC-wQKxmiDkwS_VXeFAsXZcn8tx2MlesnE51rmX5koiVpVCyHTCQNVbLVUFcdUxrZjnBd83TcFcquF14WP7KpPFJW7yzs86gFsy_o9nK2Exzgq5_dz4iN',
+      'https://ecs7.tokopedia.net/img/cache/700/product-1/2018/12/18/28696139/28696139_0222d64a-b724-4636-90e5-5cb7fcb07b93_700_933.jpg',
+    ],
+    shop: [
+      {
+        name: 'Tokopedia',
+        url: '',
+      },
+    ],
+    description: '',
+  },
+  {
+    id: 14,
+    title: 'Kertas Karton Linen Hitam',
+    slug: 'kertas-karton-linen',
+    views: 33,
+    price: 19000,
+    rating: 4.5,
+    type: 'bahan',
+    category: {
+      title: 'Aksesoris',
+      slug: 'aksesoris',
+    },
+    user: {
+      name: 'GT Store',
+      username: 'gtstore',
+      avatar: '',
+      city: 'Sleman',
+      role: 'regular',
+    },
+    picture: [
+      'https://ecs7.tokopedia.net/img/cache/700/product-1/2019/2/15/72492114/72492114_3be64130-60f5-4d13-a1a6-a1114abc0df6_466_466.jpg',
+      'https://sc02.alicdn.com/kf/HTB1foTcKFXXXXcIXVXXq6xXFXXXz.jpg_350x350.jpg',
+    ],
+    shop: [
+      {
+        name: 'Tokopedia',
+        url: '',
+      },
+    ],
+    description: '',
+  },
+  {
+    id: 15,
+    title: 'Glue Gun',
+    slug: 'glue-gun',
+    views: 33,
+    price: 19000,
+    rating: 4.5,
+    type: 'bahan',
+    category: {
+      title: 'Alat Bantu',
+      slug: 'alat-bantu',
+    },
+    user: {
+      name: 'Tadia Store',
+      username: 'tdstore',
+      avatar: '',
+      city: 'Palembang',
+      role: 'regular',
+    },
+    picture: [
+      'https://cf.shopee.co.id/file/20b18a373f9efecb0e97233a522e019f',
+      'https://ecs7.tokopedia.net/img/cache/700/product-1/2019/10/18/72591105/72591105_0307b5fb-645c-4ccf-8460-e4744e178802_682_682.jpg',
+    ],
+    shop: [
+      {
+        name: 'Shopee',
+        url: '',
+      },
+    ],
+    description: '',
+  },
+  {
+    id: 16,
+    title: 'Epoxy Resin Bening 1.5Kg',
+    slug: 'epoxy-resin',
+    views: 33,
+    price: 220000,
+    rating: 4.5,
+    type: 'bahan',
+    category: {
+      title: 'Bahan Baku',
+      slug: 'bahan-baku',
+    },
+    user: {
+      name: 'Beli Kimia',
+      username: 'belikimia',
+      avatar: '',
+      city: 'Jakarta',
+      role: 'regular',
+    },
+    picture: [
+      'https://ecs7.tokopedia.net/img/cache/700/product-1/2020/6/2/12412203/12412203_6382f437-62a6-4742-944a-00ce46547a7f_1640_1640',
+      'https://m.media-amazon.com/images/S/aplus-media/sc/7b81f793-a58b-47fb-9cc2-f6fad4446a2d.__CR0,0,300,300_PT0_SX220_V1___.jpg',
+    ],
+    shop: [
+      {
+        name: 'Tokopedia',
+        url: '',
+      },
+    ],
+    description: '',
+  },
+  {
     id: 4,
     title: 'Gelas Gerabah dari Tanah Liat',
     slug: 'gerabah-tanah-liat',
     views: 42,
     price: 50000,
-    rating: 3.4,
+    rating: 4.1,
+    type: 'product',
     category: {
       title: 'Barang Pakai',
       slug: 'barang-pakai',
@@ -149,6 +367,7 @@ const products = [
     views: 62,
     price: 75000,
     rating: 4.2,
+    type: 'product',
     category: {
       title: 'Kado',
       slug: 'kado',
@@ -178,6 +397,7 @@ const products = [
     views: 85,
     price: 106000,
     rating: 4.0,
+    type: 'product',
     category: {
       title: 'Hiasan',
       slug: 'hiasan',
@@ -207,6 +427,7 @@ const products = [
     views: 120,
     price: 140000,
     rating: 4.5,
+    type: 'product',
     category: {
       title: 'Dekorasi',
       slug: 'dekorasi',
@@ -236,6 +457,7 @@ const products = [
     views: 142,
     price: 1500000,
     rating: 5,
+    type: 'product',
     category: {
       title: 'Hiasam',
       slug: 'hiasan',
@@ -265,6 +487,7 @@ const products = [
     views: 12,
     price: 400000,
     rating: 4.4,
+    type: 'product',
     category: {
       title: 'Hiasan',
       slug: 'hiasan',
@@ -294,6 +517,7 @@ const products = [
     views: 12,
     price: 100000,
     rating: 4.4,
+    type: 'product',
     category: {
       title: 'Barang Pakai',
       slug: 'barang-pakai',
