@@ -48,6 +48,8 @@
     background-color: #f1f1f1;
     padding:10px;
     cursor: grab;
+    height: 100px;
+    overflow: hidden;
   }
   .post-item {
     display: flex;
@@ -130,7 +132,7 @@
                 <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={thumbnail} alt={title} />
               </div>
               <div class="post-caption">
-                <a href="/tutorial/{slug}" class="post-title text-overflow">{title}</a>
+                <a href="/tutorial/{slug}" rel="prefetch" class="post-title text-overflow">{title}</a>
                 <a href="/tutorial/categories/{category.slug}" class="category">{category.title}</a>
                 <span class="category">{estimasi}</span>
               </div>
