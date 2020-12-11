@@ -6,6 +6,7 @@
 	import { FeaturedProducts, ProductComponent1 } from '../components/catalogue/index';
 	import { PengrajinAvatar } from '../components/users/index';
 	import { VideoList, VideoSidebar } from '../components/videos/index';
+	import Footer from '../components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -57,11 +58,7 @@
 	</div>
 </section>
 
-<footer>
-	<div class="col">
-		mantab
-	</div>
-</footer>
+<Footer />
 
 <style>
 	.row {
@@ -94,12 +91,6 @@
 
 	.right-bar {
 		flex-basis: 35%;
-	}
-
-	footer {
-		background-color: var(--mdc-theme-secondary);
-		display: flex;
-		padding: 2rem 5%;
 	}
 
 	@media (max-width: 780px) {
