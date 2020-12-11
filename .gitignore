@@ -2,8 +2,11 @@
 /node_modules/
 /node_modules_/
 /src/node_modules/@sapper/
-yarn-error.log
-/cypress/screenshots/
 /__sapper__/
+yarn-error.log
 .env
 .env.build
+
+.vercel
+.vercelignore
+vercel.json
