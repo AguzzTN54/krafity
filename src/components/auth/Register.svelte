@@ -193,13 +193,13 @@
   </div>
 
   <Button
-    disabled={!allFilled}
+    disabled={ /*!allFilled */ true}
     variant="unelevated"
     ripple={false}
     class="primary-shadow"
     style="width:90%; margin-top:20px;"
   >
-    Daftar
+    Pendaftaran Sedang Ditutup
   </Button>
 
 </form>

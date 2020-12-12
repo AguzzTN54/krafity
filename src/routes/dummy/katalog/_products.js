@@ -51,7 +51,7 @@ const products = [
       role: 'pengrajin',
     },
     picture: [
-      'http://indonesian.slateculturestone.com/photo/pl19335439-black_and_white_marble_stone_carving_sculpture_eagle_statue_animal_figurines.jpg',
+      '/assets/images/eagle-marmer.webp',
       'https://sentralmarmer.com/wp-content/uploads/2018/01/Patung-Ayam-Marmer-1.jpg',
     ],
     shop: [
@@ -177,6 +177,37 @@ const products = [
     description: 'Kertas Origami dua sisi',
   },
   {
+    id: 17,
+    title: 'Stik Es krim',
+    slug: 'stik-eskrim',
+    views: 33,
+    price: 14000,
+    rating: 4.4,
+    type: 'bahan',
+    category: {
+      title: 'Meuble',
+      slug: 'meuble',
+    },
+    user: {
+      name: 'GT Store',
+      username: 'gtstore',
+      avatar: '',
+      city: 'Jakarta',
+      role: 'regular',
+    },
+    picture: [
+      'https://ecs7.tokopedia.net/img/cache/700/product-1/2017/8/13/0/0_b5b52b55-b864-4a39-bf2f-c9178c7e217e_700_700.jpg',
+      'https://cdn1-production-images-kly.akamaized.net/FtPKxtB9pc-_Aqc2OeDh-D3HvGc=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2750864/original/015495600_1552537999-foto_A.jpg',
+    ],
+    shop: [
+      {
+        name: 'Tokopedia',
+        url: '',
+      },
+    ],
+    description: '',
+  },
+  {
     id: 12,
     title: 'Lem Rajawali Putih 800gram',
     slug: 'lem-rajawali',
@@ -209,7 +240,7 @@ const products = [
   {
     id: 13,
     title: 'Malam Plastisin',
-    slug: 'lem-rajawali',
+    slug: 'malam-plastisin',
     views: 33,
     price: 14000,
     rating: 4.4,
@@ -226,7 +257,7 @@ const products = [
       role: 'regular',
     },
     picture: [
-      'https://lh3.googleusercontent.com/proxy/KQQl5xDfFyqiICxxZuTiH8hNpMFGlQ3e4URDF80pQppHPXYSHmmBH-KIJedpNP2K5dS5gI_gp6QK1j3a15FCysNzK7Onmb-unUVsRAYzgPF-Xlh5QUtZ83GRDVAliPI0M-FLKBjV_W7KC-wQKxmiDkwS_VXeFAsXZcn8tx2MlesnE51rmX5koiVpVCyHTCQNVbLVUFcdUxrZjnBd83TcFcquF14WP7KpPFJW7yzs86gFsy_o9nK2Exzgq5_dz4iN',
+      'https://cdns.klimg.com/diadona.id/resources/news/2020/08/26/19920/664xauto-cara-membuat-plastisin-sendiri-di-rumah-yang-mudah-dan-aman-buat-mainan-anak-200826c.jpg',
       'https://ecs7.tokopedia.net/img/cache/700/product-1/2018/12/18/28696139/28696139_0222d64a-b724-4636-90e5-5cb7fcb07b93_700_933.jpg',
     ],
     shop: [
