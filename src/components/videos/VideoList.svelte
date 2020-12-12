@@ -1,3 +1,20 @@
+<script>
+  import axios from 'axios';
+  import { Skeleton } from '../utils/index';
+
+  const getData = async () => {
+    try {
+      const { data, status } = await axios.get('/dummy/videos.json');
+      if (status === 200) return data;
+      throw new Error(`Terjadi kesalahan dengan status code ${status} saat melakukan fetch`);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const videos = getData();
+</script>
+
 <style>
   .video-list {
     margin:0 15px;
@@ -8,6 +25,7 @@
   }
 
   .thumbnail {
+    min-width: 90px;
     width: 90px;
     height: 50px;
     margin-right: 10px;
@@ -61,22 +79,38 @@
 <h2 class="text-center"> Video Lainnya </h2>
 <div class="video-list">
 
-  {#each [1, 2, 3, 4] as i (i)}
-    <a href="/" class="item row">
-      <div class="col thumbnail">
-        <img src="/assets/images/bg1-500.webp" alt="Iki bambar">
-        <span class="duration">22:12</span>
+  {#await videos}
+    {#each [1, 2, 3, 4] as i (i)}
+      <div class="item row">
+        <div class="col thumbnail">
+          <Skeleton width="100%" height="100%" style="margin:0" />
+        </div>
+        <div class="col caption" style="width:100%">
+          <Skeleton width="90%" height="13px" />
+          <span class="info"> <Skeleton width="70px" height="8px" style="display: inline-block" /> </span>
+          <span class="info"> <Skeleton width="70px" height="8px" style="display: inline-block" /> </span>
+        </div>
       </div>
-      <div class="col caption">
-        <h3 style="margin:0" class="text-overflow"> Saya Bingung mau ngasih nama Apaan hemnn </h3>
-        <span class="info"> Martian Man </span>
-        <span class="info"> 1 jam</span>
-      </div>
-    </a>
-  {/each}
+    {/each}
+  {:then data}
+  
+    {#each data as { id, title, user, duration } (id)}
+      <a href="https://www.youtube.com/watch?v={id}" target="_blank" class="item row">
+        <div class="col thumbnail">
+          <img src="/assets/images/thumbnail.svg" data-src="https://i.ytimg.com/vi_webp/{id}/mqdefault.webp" class="lazyload" alt={title}>
+          <span class="duration">{duration}</span>
+        </div>
+        <div class="col caption">
+          <h3 style="margin:0" class="text-overflow"> {title} </h3>
+          <span class="info"> {user.name} </span>
+          <span class="info"> Youtube </span>
+        </div>
+      </a>
+    {/each}
+  {/await}
 
 </div>
 
-<div class="text-center">
+<!-- <div class="text-center">
   <a href="/tutorial/video" class="load-more primary-shadow"> Lihat Semua video</a>
-</div>
+</div> -->

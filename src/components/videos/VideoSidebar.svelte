@@ -1,14 +1,31 @@
 <script>
   import { onMount } from 'svelte';
+  import axios from 'axios';
+  import { Skeleton } from '../utils/index';
 
-  onMount(async () => {
+  const splide = async () => {
     const { default: Splide } = await import('@splidejs/splide');
     new Splide('#video-slide', {
       perPage: 1,
       gap: '1.5rem',
       height: '220px',
     }).mount();
-  });
+  };
+
+  onMount(() => splide());
+
+  const getData = async () => {
+    try {
+      const { data, status } = await axios.get('/dummy/videos.json');
+      splide();
+      if (status === 200) return data;
+      throw new Error(`Terjadi kesalahan dengan status kode ${status}`);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const videos = getData();
 </script>
 
 <style>
@@ -35,6 +52,7 @@
   }
 
   .video-caption {
+    width:calc(100% - 10px);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -68,6 +86,7 @@
     background-color: #fff;
     transition: all .5s;
     opacity: 0.5;
+    cursor: pointer;
   }
 
   .video-play:hover {
@@ -86,29 +105,41 @@
 
 <h2 class="text-center">Video tutorial</h2>
 <div class="video-slider">
-  <div class="slide-video splide" id="video-slide">
-    <div class="splide__track">
-      <ul class="splide__list">
 
-        {#each [0, 1, 2, 3, 4, 9] as i (i)}
-          <li class="splide__slide">
-            <div class="video-item splide__slide__container">
-              <div class="slide-picture">
-                <img src="/assets/images/pic1.png" alt="Item 1" />
-                <a href="/" class="video-play"> <i class="material-icons">play_arrow</i></a>
-                <div class="video-caption">
-                  <a href="/" class="video-title text-overflow">
-                    <h3>Ini Nama Produk nya bosqueh bagus sekali bapaqe</h3>
-                  </a>
-                  <a href="/tutorial/categories" class="category">Darwin Media</a>
-                  <a href="/tutorial/categories" class="category">barang bekas</a>
+  {#await videos}
+    <div class="slide-video">
+      <div class="video-item splide__slide__container">
+        <div class="slide-picture">
+          <Skeleton style="width:100%; height:100%; margin:0px" />
+        </div>
+      </div>
+    </div>
+  {:then data}
+    <div class="slide-video splide" id="video-slide">
+      <div class="splide__track">
+        <ul class="splide__list">
+
+          {#each data as { id, title, user } (id)}
+            <li class="splide__slide">
+              <div class="video-item splide__slide__container">
+                <div class="slide-picture">
+                  <img class="lazyload" src="/assets/images/thumbnail.svg" data-src="https://i.ytimg.com/vi_webp/{id}/hqdefault.webp" alt={title} />
+                  <span class="video-play"> <i class="material-icons">play_arrow</i></span>
+                  <div class="video-caption">
+                    <a href="https://www.youtube.com/watch?v={id}" target="_blank" class="video-title text-overflow">
+                      <h3>{title}</h3>
+                    </a>
+                    <span class="category">{user.name}</span>
+                    <span class="category"> Youtube </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        {/each}
+            </li>
+          {/each}
 
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
+
+  {/await}
 </div>
