@@ -3,13 +3,14 @@
 	  const { slug } = params;
 	  const res = await this.fetch(`/dummy/tutorials/${slug}.json`);
 	  const data = await res.json();
-	  if (res.status === 200) return { post: { data } };
+	  if (res.status === 200) return { post: data };
 	  this.error(res.status, res.message);
 	}
 </script>
 
 <script>
 	import { stores } from '@sapper/app';
+	import axios from 'axios';
 	import Footer from '../../components/Footer.svelte';
 	import { Avatar } from '../../components/users/index';
 	import { ProductLandscape } from '../../components/catalogue/index';
@@ -17,11 +18,30 @@
 	export let post;
 	const {
 	  id, title, category, user, content, estimasi, thumbnail,
-	} = post.data;
+	} = post;
 	const metaDescription = content.replace(/(<([^>]+)>)/ig, '').substring(0, 200);
 
 	const { page } = stores();
 	const { host, path } = $page;
+
+	const getData = async () => {
+	  try {
+	    const dataReturn = [];
+	    const arData = [];
+	    const { data, status } = await axios.get('/dummy/katalog.json');
+	    for (let i = 0; i < 4; i++) {
+	      const rand = Math.floor(Math.random() * (data.length - 1) + 1);
+	      // eslint-disable-next-line no-continue
+	      if (arData.includes(rand)) continue;
+	      arData.push(rand);
+	      dataReturn.push(data[rand]);
+	    }
+	    if (status) return dataReturn;
+	    throw new Error(`Terjadi kesalahan dengan status kode ${status}`);
+	  } catch (e) {
+	    console.error(e);
+	  }
+	};
 </script>
 
 <style>
@@ -154,15 +174,21 @@
 
 <section id="shop" class="content">
 	<div class="shop-list">
-		<div class="item">
-			<ProductLandscape />
-		</div>
-		<div class="item">
-			<ProductLandscape />
-		</div>
-		<div class="item">
-			<ProductLandscape />
-		</div>
+
+		{#await getData()}
+			<div class="item">
+				<ProductLandscape skeleton/>
+			</div>
+			<div class="item">
+				<ProductLandscape skeleton/>
+			</div>
+		{:then pinnedProduct}
+			{#each pinnedProduct as data (data.id)}
+				<div class="item">
+					<ProductLandscape {data} />
+				</div>
+			{/each}
+		{/await}
 	</div>
 </section>
 

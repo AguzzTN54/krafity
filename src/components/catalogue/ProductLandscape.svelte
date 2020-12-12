@@ -1,9 +1,19 @@
 <script>
-  export let name = 'Ini produk satu';
-  export let pic = '/assets/images/bg1-500.webp';
-  export let price = 50000;
-  export let city = 'Unknown';
-  export let link = '';
+  import { Skeleton } from '../utils/index';
+
+  export let skeleton;
+  export let data = {
+    title: 'Product Title',
+    slug: '',
+    picture: ['/assets/images/bg1-500.webp'],
+    price: 0,
+    category: { name: 'Unknown' },
+    shop: [{ name: 'none', url: '' }],
+  };
+
+  const {
+    title, picture, price, slug, category, shop,
+  } = data;
 </script>
 
 <style>
@@ -20,6 +30,7 @@
   }
 
   .thumb {
+    min-width: 100px;
     width: 100px;
     height: 100px;
   }
@@ -49,14 +60,27 @@
   }
 </style>
 
-<div class="product-item">
-  <div class="information">
-    <h2 class="text-overflow">{name}</h2>
-    <span class="city"> <i class="material-icons">store</i> {city} </span>
-    <span class="price"> Rp {price},-</span>
-    <a href={link} class="buy-button"> Beli </a>
+{#if skeleton}
+  <div class="product-item">
+    <div class="information">
+      <h2 class="text-overflow" style="width:100%"><Skeleton width="100%" height="10px" /></h2>
+      <span class="city"> <Skeleton width="100px" height="8px" /> </span>
+      <span class="price"> <Skeleton width="50px" height="13px" /></span>
+    </div>
+    <div class="thumb">
+      <Skeleton width="100%" height="100%" />
+    </div>
   </div>
-  <div class="thumb">
-    <img src={pic} alt="{name}">
+{:else}
+  <div class="product-item">
+    <div class="information">
+      <h2 class="text-overflow"><a href="/katalog/{slug}">{title}</a></h2>
+      <span class="city"> <i class="material-icons">store</i> {category.title} </span>
+      <span class="price"> Rp {price},-</span>
+      <a href={shop[0].url} target="_blank" class="buy-button"> Beli </a>
+    </div>
+    <div class="thumb">
+      <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={picture[0]} alt="{title}">
+    </div>
   </div>
-</div>
+{/if}
