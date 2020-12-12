@@ -77,7 +77,7 @@
       <h2 class="text-overflow"><a href="/katalog/{slug}">{title}</a></h2>
       <span class="city"> <i class="material-icons">store</i> {category.title} </span>
       <span class="price"> Rp {price},-</span>
-      <a href={shop[0].url} target="_blank" class="buy-button"> Beli </a>
+      <a href={shop[0].url} target="_blank" class="buy-button"> {shop[0].name} </a>
     </div>
     <div class="thumb">
       <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={picture[0]} alt="{title}">

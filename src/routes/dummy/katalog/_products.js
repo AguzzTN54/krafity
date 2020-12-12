@@ -13,10 +13,11 @@ const products = [
     },
     user: {
       name: 'Laras Batik',
-      username: '',
+      username: 'larasbatik',
       avatar: 'https://pict-b.sindonews.net/dyn/620/pena/news/2020/10/26/186/209526/jaga-orisinalitas-dan-kualitas-batik-tulis-demi-generasi-mendatang-sft.jpg',
       city: 'Tulungagung',
       role: 'pengrajin',
+      stuff: ['Batik Celup', 'Batik Tulis', 'Lukisan', 'Kain Tenun'],
     },
     picture: [
       'https://assets.wego.com/images/f_auto,q_auto/v1604564131/editorialonly_surakaartajune_vania/editorialonly_surakaartajune_vania.jpg',
@@ -45,10 +46,11 @@ const products = [
     },
     user: {
       name: 'Bintang Antik Sejahtera',
-      username: '',
+      username: 'bintangantik',
       avatar: '',
       city: 'Tulungagung',
       role: 'pengrajin',
+      stuff: ['ukiran', 'Batu Marmer', 'Patung', 'Meuble'],
     },
     picture: [
       '/assets/images/eagle-marmer.webp',
@@ -100,10 +102,11 @@ const products = [
     },
     user: {
       name: 'Rotanku',
-      username: '',
+      username: 'rotan31',
       avatar: '',
       city: 'Balikpapan',
       role: 'pengrajin',
+      stuff: ['Pernak Pernik', 'Anyaman', 'Pahatan'],
     },
     picture: [
       'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1080,h_1372/https://rimbakita.com/wp-content/uploads/2020/05/tas-rotan.jpg',
@@ -216,8 +219,8 @@ const products = [
     rating: 4.4,
     type: 'bahan',
     category: {
-      title: 'Meuble',
-      slug: 'meuble',
+      title: 'Bahan Baku',
+      slug: 'bahan-baku',
     },
     user: {
       name: 'GT Store',
@@ -375,10 +378,11 @@ const products = [
     },
     user: {
       name: 'Gr Abah',
-      username: '',
+      username: 'abahenol',
       avatar: '',
       city: 'Kudus',
       role: 'pengrajin',
+      stuff: ['Pahatan', 'patung', 'Gerabah'],
     },
     picture: [
       'https://ngertiaja.com/wp-content/uploads/2019/08/kerajinan-gelas-dari-tanah-liat.jpg',
@@ -405,10 +409,11 @@ const products = [
     },
     user: {
       name: 'Adinda Flower',
-      username: '',
+      username: 'adindakanda',
       avatar: 'https://cf.shopee.co.id/file/6e4ac59819af96fe3ff5bfbf9f749ba8',
       city: 'Yogyakarta',
       role: 'pengrajin',
+      stuff: ['Souvenir', 'Anyaman', 'Penjahit', 'Kado'],
     },
     picture: [
       'https://cf.shopee.co.id/file/6e4ac59819af96fe3ff5bfbf9f749ba8',
@@ -435,10 +440,11 @@ const products = [
     },
     user: {
       name: 'Aprilin',
-      username: '',
+      username: 'aprilin',
       avatar: '',
       city: '',
       role: 'pengrajin',
+      stuff: ['Daur Ulang', 'Dekorasi'],
     },
     picture: [
       'https://i.ytimg.com/vi/oYNEQKqYkas/maxresdefault.jpg',
@@ -465,10 +471,11 @@ const products = [
     },
     user: {
       name: 'Ifur',
-      username: '',
+      username: 'ifur123',
       avatar: '',
       city: 'Malang',
       role: 'pengrajin',
+      stuff: ['Pahatan', 'Tata Ruang'],
     },
     picture: [
       'https://blogpictures.99.co/Lampu-Warna-Warni-Bambu-3366237914-1537501858449.png',
@@ -495,10 +502,11 @@ const products = [
     },
     user: {
       name: 'Cendana Arum',
-      username: '',
+      username: 'arumi77',
       avatar: 'https://ecs7.tokopedia.net/img/cache/700/product-1/2018/12/9/4946108/4946108_1533af33-3aa0-456c-a027-d0597c80ca58_1224_1224.jpg',
       city: 'Medan',
       role: 'pengrajin',
+      stuff: ['Daur Ulang', 'Ukiran', 'Dekorasi'],
     },
     picture: [
       'https://ecs7.tokopedia.net/img/cache/700/product-1/2018/12/9/4946108/4946108_1533af33-3aa0-456c-a027-d0597c80ca58_1224_1224.jpg',
@@ -525,10 +533,11 @@ const products = [
     },
     user: {
       name: 'Main Blowing',
-      username: '',
+      username: 'mindblow',
       avatar: 'https://i1.wp.com/cdn.idntimes.com/content-images/community/2017/10/kerajinan-dari-cd-bentuk-burung-841x1024-e89b8b9de6558c1e17cc9bd5ecde29fe.jpg?resize=662%2C662&ssl=1',
       city: 'Tanjung Pinang',
       role: 'pengrajin',
+      stuff: ['Dekorasi', 'Daur Ulang', 'Kerajinan'],
     },
     picture: [
       'https://i1.wp.com/cdn.idntimes.com/content-images/community/2017/10/kerajinan-dari-cd-bentuk-burung-841x1024-e89b8b9de6558c1e17cc9bd5ecde29fe.jpg?resize=662%2C662&ssl=1',

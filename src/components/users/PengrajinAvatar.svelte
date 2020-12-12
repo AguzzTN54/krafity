@@ -96,7 +96,7 @@
                     <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={user.avatar} alt={user.name} />
                   </div>
                   <div class="item-caption">
-                    <a href="/user/{user.username}}" class="item-title">{user.name}</a>
+                    <a href="/user/{user.username}" class="item-title">{user.name}</a>
                   </div>
                 </div>
               </li>
