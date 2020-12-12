@@ -15,17 +15,17 @@
   import { goto, stores } from '@sapper/app';
 
   export let segment;
-
+  const { page } = stores();
+  
   let showBackButton = false;
   $: if (segment === 'tutorial') {
-    if ($page.params.slug) showBackButton = true;
+    if ($page.params.slug !== 'categories') showBackButton = true;
     else showBackButton = false;
   } else showBackButton = false;
 
   let drawerOpen;
   let active = segment;
 
-  const { page } = stores();
   const setActive = (value) => {
     active = value;
     drawerOpen = false;
