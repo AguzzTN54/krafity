@@ -260,7 +260,7 @@ const products = [
       role: 'regular',
     },
     picture: [
-      'https://cdns.klimg.com/diadona.id/resources/news/2020/08/26/19920/664xauto-cara-membuat-plastisin-sendiri-di-rumah-yang-mudah-dan-aman-buat-mainan-anak-200826c.jpg',
+      '/assets/images/plastisin.jpg',
       'https://ecs7.tokopedia.net/img/cache/700/product-1/2018/12/18/28696139/28696139_0222d64a-b724-4636-90e5-5cb7fcb07b93_700_933.jpg',
     ],
     shop: [

@@ -16,10 +16,11 @@
 
   export let segment;
   const { page } = stores();
-  
+
   let showBackButton = false;
   $: if (segment === 'tutorial') {
-    if ($page.params.slug !== 'categories') showBackButton = true;
+    const { params, path } = $page;
+    if (params.slug && path.indexOf('categories') < 0) showBackButton = true;
     else showBackButton = false;
   } else showBackButton = false;
 
@@ -44,6 +45,11 @@
       icon: 'streetview',
       url: 'tutorial',
     },
+    {
+      title: 'Pengrajin',
+      icon: 'face',
+      url: '/pengrajin',
+    },
   ];
 
   const drawerItem = [
@@ -56,6 +62,11 @@
       title: 'Katalog',
       icon: 'store',
       url: '/katalog',
+    },
+    {
+      title: 'Pengrajin',
+      icon: 'face',
+      url: '/pengrajin',
     },
   ];
 </script>
