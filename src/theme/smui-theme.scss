@@ -1,0 +1,56 @@
+@import '@material/theme/color-palette';
+
+// Svelte Colors!
+$mdc-theme-primary: #e60058;
+$mdc-theme-secondary: #676778;
+// Other Svelte color: #40b3ff
+
+$mdc-theme-background: #fff;
+$mdc-theme-surface: #fff;
+
+$mdc-theme-error: $material-color-red-900;
+
+@import '@material/theme/mdc-theme';
+@import '@material/elevation/mixins';
+// Main Top App Bar styling.
+@import '@smui/top-app-bar/style';
+.mdc-top-app-bar.krafity-app-bar {
+  // Color the top bar with "surface" colors.
+  @include mdc-top-app-bar-fill-color-accessible(surface);
+  @include mdc-top-app-bar-icon-ink-color($mdc-theme-primary);
+  // Give it a shadow.
+  @include mdc-elevation(0);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.shadow {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.8);
+}
+
+.primary-shadow {
+  box-shadow: 0 20px 20px -5px rgba($mdc-theme-primary, 0.4) !important;
+  transition: all 0.5s;
+
+  &:disabled {
+    box-shadow: unset !important;
+  }
+}
+
+@import '@material/linear-progress/mixins';
+.preloader {
+  @include mdc-linear-progress-bar-color($mdc-theme-primary);
+  @include mdc-linear-progress-buffer-color(lighten($mdc-theme-primary, 40%));
+  position: fixed;
+  width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}

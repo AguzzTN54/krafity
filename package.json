@@ -1,0 +1,47 @@
+{
+  "name": "krafity",
+  "description": "krafity share your craft",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "sapper dev",
+    "dev": "sapper dev --no-hot",
+    "build": "sapper export",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^2.4.21",
+    "@splidejs/splide-extension-url-hash": "^0.1.5",
+    "apollo-boost": "^0.4.9",
+    "apollo-client": "^2.6.10",
+    "apollo-datasource-rest": "^0.9.5",
+    "axios": "^0.21.0",
+    "compression": "^1.7.1",
+    "graphql": "^15.4.0",
+    "lazysizes": "^5.2.2",
+    "polka": "next",
+    "quill": "^1.3.7",
+    "sirv": "^1.0.0",
+    "svelte-material-ui": "^1.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/eslint-config": "github:sveltejs/eslint-config",
+    "css-loader": "^5.0.1",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "file-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^1.3.1",
+    "node-sass": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^1.4.1",
+    "sapper": "^0.27.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.0.5",
+    "svelte": "^3.0.0",
+    "svelte-loader": "^2.9.0",
+    "webpack": "^4.7.0"
+  }
+}
