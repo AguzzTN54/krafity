@@ -1,11 +1,12 @@
 {
-  "name": "krafity",
-  "description": "krafity share your craft",
+  "name": "kayaa",
+  "description": "Kayaa - Bagikan Karya",
   "version": "0.0.1",
   "scripts": {
-    "start": "sapper dev",
+    "start": "node __sapper__/build",
     "dev": "sapper dev --no-hot",
-    "build": "sapper export",
+    "build": "sapper build",
+    "export": "sapper export",
     "lint": "eslint ./src"
   },
   "dependencies": {
