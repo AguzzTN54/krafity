@@ -11,6 +11,13 @@
     width: min-content;
   }
 
+  .star-icon::before {
+    display: inline-block;
+    content: '\2605';
+    font-size: 1.2rem;
+    font-style: normal;
+  }
+
   i {
     font-size: .9rem !important;
     margin-right:-3px;
@@ -55,11 +62,11 @@
 
 <div class="star-rating">
   <span class="star">
-    <i class="material-icons">star</i>
-    <i class="material-icons">star</i>
-    <i class="material-icons">star</i>
-    <i class="material-icons">star</i>
-    <i class="material-icons">star</i>
+    <i class="star-icon"></i>
+    <i class="star-icon"></i>
+    <i class="star-icon"></i>
+    <i class="star-icon"></i>
+    <i class="star-icon"></i>
   </span>
   <div class="blend">
     <div class="gray"></div>
