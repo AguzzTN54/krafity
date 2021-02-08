@@ -144,7 +144,7 @@
     <Section>
       <Title class="text-center brand-logo">
         <a href="/" class="site-logo">
-          <img src="/assets/logo/krafity-logo.svg" alt="Krafity Logo">
+          <img src="/assets/logo/kayaa-logo.svg" alt="Kayaa Logo">
         </a>
       </Title>
     </Section>
@@ -173,9 +173,9 @@
 <Drawer variant="modal" bind:open={drawerOpen}>
   <Header>
     <DrawerTitle>
-      <img src="/assets/logo/krafity-logo.svg" alt="Krafity brand" style="width:100px;">
+      <img src="/assets/logo/kayaa-logo.svg" alt="Kayaa brand" style="width:100px;">
     </DrawerTitle>
-    <Subtitle>Share Your Creativity.</Subtitle>
+    <Subtitle>Situs Berbagi Karya.</Subtitle>
   </Header>
   <Content>
     <List>

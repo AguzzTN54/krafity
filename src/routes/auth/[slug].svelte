@@ -124,7 +124,7 @@
   <div class="mask1" /><div class="mask2" />
   <div class="auth-form-field">
     <h1 class="brand"><a href="/" rel="prefetch">
-      <img src="/assets/logo/krafity-logo.svg" alt="Krafity Logo">
+      <img src="/assets/logo/kayaa-logo.svg" alt="Kayaa Logo">
     </a></h1>
 
     {#if slug === 'register'}
