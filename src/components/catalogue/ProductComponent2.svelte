@@ -1,5 +1,6 @@
 <script>
   import { Skeleton, Star } from '../utils/index';
+  import formatPrice from '../../functions/formatPrice';
 
   export let skeleton;
   export let data = {};
@@ -96,12 +97,31 @@
 
   .avatar {
     font-size: small;
+    white-space: nowrap;
   }
   .avatar img {
     width: 15px;
     height: 15px;
     border-radius: 100%;
     margin-right: 3px;
+  }
+  .user {
+    display: inline-block;
+    height: 20px;
+    overflow: hidden;
+  }
+  .user span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    transform: translateY(0%);
+    transition: transform .3s;
+  }
+
+  .item:hover .user span {
+    transform: translateY(-100%);
   }
 </style>
 
@@ -126,14 +146,19 @@
     </figure>
     <div class="caption">
       <h3><a href="/katalog/{slug}"> {title} </a></h3>
-      <div class="price">Rp{price},-</div>
+      <div class="price">Rp{formatPrice(price)}</div>
       <a href="/user/{user.username}" class="avatar">
         <img
           class="lazyload"
           src="/assets/images/thumbnail.svg"
           data-src={user.avatar}
           alt="Avatar"
-        > {user.name}</a>
+        >
+        <div class="user">
+          <span>{user.city}</span>
+          <span>{user.name}</span>
+        </div>
+      </a>
       <span class="rating"> <Star rate={rating} /> </span>
     </div>
   {/if}

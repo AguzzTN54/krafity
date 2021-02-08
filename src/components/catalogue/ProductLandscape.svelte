@@ -1,5 +1,6 @@
 <script>
   import { Skeleton } from '../utils/index';
+  import formatPrice from '../../functions/formatPrice';
 
   export let skeleton;
   export let data = {
@@ -76,7 +77,7 @@
     <div class="information">
       <h2 class="text-overflow"><a href="/katalog/{slug}">{title}</a></h2>
       <span class="city"> <i class="material-icons">store</i> {category.title} </span>
-      <span class="price"> Rp {price},-</span>
+      <span class="price"> Rp {formatPrice(price)}</span>
       <a href={shop[0].url} target="_blank" class="buy-button"> {shop[0].name} </a>
     </div>
     <div class="thumb">

@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import axios from 'axios';
   import { Skeleton, Star } from '../utils/index';
+  import formatPrice from '../../functions/formatPrice';
 
   const splide = async () => {
     const { default: Splide } = await import('@splidejs/splide');
@@ -141,7 +142,7 @@
                 </figure>
                 <div class="caption">
                   <h3><a href="/katalog/{slug}" rel="prefetch">{title}</a></h3>
-                  <div class="price">Rp{price},-</div>
+                  <div class="price">Rp{formatPrice(price)}</div>
                   <span class="rating"> <Star rate={rating} /> </span>
                 </div>
               </div>
