@@ -10,13 +10,14 @@
 <script>
   import Banner from '../../components/Banner.svelte';
   import { ProductComponent2 } from '../../components/catalogue/index';
+  import { BreadCrumbs } from '../../components/utils/index';
 
   export let katalog;
 </script>
 
 <style>
   #product {
-    padding: 5%;
+    padding: 35px 5%;
   }
   .list {
     display: flex;
@@ -30,7 +31,8 @@
   <title>Toko Kreasi Kerajinan Indonesia</title>
 </svelte:head>
 
-<Banner title="Toko" />
+<!-- <Banner title="Toko" /> -->
+<BreadCrumbs />
 <div class="shop-content" id="product">
   <div class="list">
     {#await katalog}
