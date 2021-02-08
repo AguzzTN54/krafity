@@ -20,6 +20,9 @@
     font-size: 1.3rem;
     text-align: center;
   }
+  h2, h3 {
+    font-family: 'Nunito Sans', 'Open Sans', Tahoma, sans-serif;
+  }
   
   .list {
     display: flex;

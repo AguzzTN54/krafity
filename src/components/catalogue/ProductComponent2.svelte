@@ -11,12 +11,18 @@
 <style>
   .item {
     min-width:150px;
-    width: 15%;
+    width: 15.333%;
     height: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(155, 155, 155, 0.6);
-    margin: 10px;
+    border-radius: 10px 5px;
+    box-shadow: 0 0 3px rgba(205, 205, 205, 0.6);
+    margin: 7px;
     overflow: hidden;
+    cursor: pointer;
+    transition: all .5s;
+  }
+
+  .item:hover {
+    box-shadow: 0 0 3px rgba(205, 205, 205, 0.8);
   }
   figure {
     width: 100%;
@@ -69,7 +75,10 @@
 
   h3 {
     font-size: .9rem;
-    margin: 8px 0;
+    font-family: 'Nunito Sans', 'Open Sans', Tahoma, sans-serif;
+    font-weight: 700;
+    color: #141414;
+    margin: 8px 0 3px;
     line-height: 1rem;
     /* height: 32px; */
     overflow: hidden;
@@ -81,6 +90,8 @@
 
   .price {
     font-weight: bold;
+    font-size: 1.05rem;
+    color: var(--mdc-theme-primary);
   }
 
   .avatar {
@@ -115,8 +126,14 @@
     </figure>
     <div class="caption">
       <h3><a href="/katalog/{slug}"> {title} </a></h3>
-      <a href="/user/{user.username}" class="avatar"> <img class="lazyload" src="/assets/images/thumbnail.svg" data-src={user.avatar} alt="Avatar"> {user.name}</a>
       <div class="price">Rp{price},-</div>
+      <a href="/user/{user.username}" class="avatar">
+        <img
+          class="lazyload"
+          src="/assets/images/thumbnail.svg"
+          data-src={user.avatar}
+          alt="Avatar"
+        > {user.name}</a>
       <span class="rating"> <Star rate={rating} /> </span>
     </div>
   {/if}

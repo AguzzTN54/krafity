@@ -16,6 +16,9 @@
 </script>
 
 <style>
+  h2 {
+    font-family: 'Nunito Sans', 'Open Sans', Tahoma, sans-serif;
+  }
   .load-more {
     color: var(--mdc-theme-primary);
     border: 1px solid var(--mdc-theme-primary);

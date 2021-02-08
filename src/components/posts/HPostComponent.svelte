@@ -32,6 +32,7 @@
   h3 {
     font-size: large;
     font-weight: bold;
+    font-family: 'Nunito Sans', 'Open Sans', Tahoma, sans-serif;
   }
 
   .user a, .link {
