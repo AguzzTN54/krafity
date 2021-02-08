@@ -1,5 +1,6 @@
 <script>
 	import '../theme/style.scss';
+	import MetaTags from '../components/MetaTags.svelte';
 	import { TopbarCategoryList, RecomendedCategory } from '../components/categories/index';
 	import { MainPostList, PostList1 } from '../components/posts/index';
 	import { TagComponent1 } from '../components/tags/index';
@@ -10,22 +11,7 @@
 </script>
 
 <svelte:head>
-	<title> Krafity - Share Your Creativity </title>
-	<meta name="title" content="Krafity - Temukan dan Bagikan Kreativitas"/>
-	<meta name="description" content='Situs berbagi karya, temukan juga karya karya terbaik di sini, mulai dari kerajianan tangan, pernak pernik hingga ide dekorasi ruangan dari kerajinan tangan.'/>
-	
-	<link rel="fluid-icon" href="https://krafity.vercel.app/assets/images/screen.png" title="Krafity"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="https://krafity.vercel.app/"/>
-	<meta property="og:title" content="Krafity - Temukan dan Bagikan Kreativitas"/>
-	<meta property="og:description" content='Situs berbagi karya, temukan juga karya karya terbaik di sini, mulai dari kerajianan tangan, pernak pernik hingga ide dekorasi ruangan dari kerajinan tangan.'/>
-	<meta property="og:image" content="https://krafity.vercel.app/assets/images/screen.png"/>
-
-	<meta property="twitter:card" content="summary_large_image"/>
-	<meta property="twitter:url" content="https://krafity.vercel.app/"/>
-	<meta property="twitter:title" content="Krafity - Temukan dan Bagikan Kreativitas"/>
-	<meta property="twitter:description" content='Situs berbagi karya, temukan juga karya karya terbaik di sini, mulai dari kerajianan tangan, pernak pernik hingga ide dekorasi ruangan dari kerajinan tangan.'/>
-	<meta property="twitter:image" content="https://krafity.vercel.app/assets/images/screen.png"/>
+	<MetaTags />
 </svelte:head>
 
 <TopbarCategoryList />
