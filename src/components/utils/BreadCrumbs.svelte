@@ -23,16 +23,12 @@
 </script>
 
 <div class="breadcrumbs">
-  {#each list as {title, link}}
-
+  {#each list as { title, link }}
     {#if title}
       {#if link}
-        <a href="{link}" class="item"> {title} </a>
-      {:else}
-        <span class="item"> {title} </span>
-      {/if}
+        <a href={link} class="item"> {title} </a>
+      {:else}<span class="item"> {title} </span>{/if}
     {/if}
-    
   {/each}
 </div>
 
@@ -41,7 +37,7 @@
     text-transform: capitalize;
     display: inline-block;
     margin: 20px 5% 0;
-    padding: 6px 20px;
+    padding: 0px 20px 3px;
     border-radius: 50px;
     box-shadow: 0 0 3px rgba(205, 205, 205, 0.6);
   }
