@@ -1,17 +1,26 @@
 <script>
-	import '../theme/style.scss';
-	import MetaTags from '../components/MetaTags.svelte';
-	import { TopbarCategoryList, RecomendedCategory } from '../components/categories/index';
-	import { MainPostList, PostList1 } from '../components/posts/index';
-	import { TagComponent1 } from '../components/tags/index';
-	import { FeaturedProducts, ProductComponent1 } from '../components/catalogue/index';
-	import { PengrajinAvatar } from '../components/users/index';
-	import { VideoList, VideoSidebar } from '../components/videos/index';
-	import Footer from '../components/Footer.svelte';
+  import '../theme/style.scss';
+  import CONFIG from '../site-config';
+  import MetaTags from '../components/MetaTags.svelte';
+  import Footer from '../components/Footer.svelte';
+  import { MainPostList, PostList1 } from '../components/posts/index';
+  import { TagComponent1 } from '../components/tags/index';
+  import { PengrajinAvatar } from '../components/users/index';
+  import { VideoList, VideoSidebar } from '../components/videos/index';
+  import {
+    TopbarCategoryList,
+    RecomendedCategory,
+  } from '../components/categories/index';
+  import {
+    FeaturedProducts,
+    ProductComponent1,
+  } from '../components/catalogue/index';
+
+  const { TITLE } = CONFIG;
 </script>
 
 <svelte:head>
-	<MetaTags />
+  <MetaTags title={TITLE} />
 </svelte:head>
 
 <TopbarCategoryList />
@@ -19,84 +28,84 @@
 <FeaturedProducts />
 
 <section class="row row-1">
-	<div class="col">
-		<RecomendedCategory />
-	</div>
-	<div class="col tags">
-		<TagComponent1 />
-	</div>
+  <div class="col">
+    <RecomendedCategory />
+  </div>
+  <div class="col tags">
+    <TagComponent1 />
+  </div>
 </section>
 
-<div style="margin-top: 40px;"></div>
+<div style="margin-top: 40px;" />
 <ProductComponent1 />
 
-<div style="margin-top: 20px;"></div>
+<div style="margin-top: 20px;" />
 <PengrajinAvatar />
 
 <section class="main row">
-	<div class="content">
-		<MainPostList />
-	</div>
-	<div class="right-bar">
-		<VideoSidebar />
-		<div style="margin-top: 30px;"></div>
-		<VideoList />
-	</div>
+  <div class="content">
+    <MainPostList />
+  </div>
+  <div class="right-bar">
+    <VideoSidebar />
+    <div style="margin-top: 30px;" />
+    <VideoList />
+  </div>
 </section>
 
 <Footer />
 
 <style>
-	.row {
-		display: flex;
-		width: 100%;
-		padding: 10px 5rem;
-		margin-top: 15px;
-		margin-bottom: 20px;
-		position: relative;
-		/* border-top:1px solid #ccc; */
-	}
-	.row-1::after {
-		content: '';
-		display: flex;
-		width: 85%;
-		border-bottom: 2px solid #eee;
-		margin-top: 10px;
-		position: absolute;
-		left: 8%;
-		bottom: -15px;
-	}
+  .row {
+    display: flex;
+    width: 100%;
+    padding: 10px 5rem;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    /* border-top:1px solid #ccc; */
+  }
+  .row-1::after {
+    content: '';
+    display: flex;
+    width: 85%;
+    border-bottom: 2px solid #eee;
+    margin-top: 10px;
+    position: absolute;
+    left: 8%;
+    bottom: -15px;
+  }
 
-	.col {
-		flex-grow: 1;
-	}
+  .col {
+    flex-grow: 1;
+  }
 
-	.content {
-		flex-basis: 65%;
-	}
+  .content {
+    flex-basis: 65%;
+  }
 
-	.right-bar {
-		flex-basis: 35%;
-	}
+  .right-bar {
+    flex-basis: 35%;
+  }
 
-	@media (max-width: 780px) {
-		.row {
-			flex-direction: column;
-			padding-left: 5%;
-			padding-right: 5%;
-		}
-		.tags {
-			margin-top: 30px;
-		}
-		.content {
-			margin-bottom: 15px;
-		}
-		.content::after {
-			content: '';
-			display: block;
-			width: 80%;
-			margin: 20px auto auto;
-			border-bottom: 1px solid #dadada;
-		}
-	}
+  @media (max-width: 780px) {
+    .row {
+      flex-direction: column;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .tags {
+      margin-top: 30px;
+    }
+    .content {
+      margin-bottom: 15px;
+    }
+    .content::after {
+      content: '';
+      display: block;
+      width: 80%;
+      margin: 20px auto auto;
+      border-bottom: 1px solid #dadada;
+    }
+  }
 </style>

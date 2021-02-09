@@ -2,17 +2,16 @@
   import '../theme/style.scss';
   import 'lazysizes';
   import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
-  import { onMount, setContext } from 'svelte';
-  import { writable } from 'svelte/store';
+  import { onMount } from 'svelte';
   import { stores } from '@sapper/app';
   import { DenseFixedAdjust } from '@smui/top-app-bar';
   import LinearProgress from '@smui/linear-progress';
   import Appbar from '../components/Appbar.svelte';
+  import { mobile } from '../store';
 
   const { preloading } = stores();
-  
-  let mobile = false;
-  const toggleResponsive = () => { mobile = (window.innerWidth < 750); };
+
+  const toggleResponsive = () => mobile.set(window.innerWidth < 750);
 
   const removeLoader = (loader, t) => {
     clearTimeout(t);
@@ -26,13 +25,25 @@
     toggleResponsive();
   });
 
-  const responsive = writable(mobile);
-  $: responsive.set(mobile);
-  setContext('responsive', responsive);
-
   export let segment;
   $: console.log(segment);
 </script>
+
+<svelte:window on:resize={toggleResponsive} />
+{#if $preloading}
+  <LinearProgress indeterminate class="preloader" />
+{/if}
+
+{#if segment === 'auth'}
+  <main>
+    <slot />
+  </main>
+{:else}
+  <Appbar {segment} />
+  <main use:DenseFixedAdjust>
+    <slot />
+  </main>
+{/if}
 
 <style>
   :global(.splide__pagination) {
@@ -50,7 +61,7 @@
     justify-content: center;
     align-items: center;
     opacity: 0.5;
-    transition: all .5s;
+    transition: all 0.5s;
   }
   :global(.splide__arrow:hover) {
     opacity: 1;
@@ -61,20 +72,3 @@
     width: 70% !important;
   }
 </style>
-
-<svelte:window on:resize={toggleResponsive} />
-{#if $preloading}
-  <LinearProgress indeterminate class="preloader"/>
-{/if}
-
-{#if segment === 'auth'}
-  <main>
-    <slot />
-  </main>
-
-{:else}
-  <Appbar {segment}/>
-  <main use:DenseFixedAdjust>
-    <slot />
-  </main>
-{/if}
