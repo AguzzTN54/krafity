@@ -113,7 +113,7 @@
             {title}
           </a>
         {/each}
-        <a href="/auth/login" class="btn"> Login </a>
+        <!-- <a href="/auth/login" class="btn"> Login </a> -->
       {:else}
         <IconButton class="material-icons" aria-label="Download">
           search
@@ -130,7 +130,7 @@
       <img
         src="/assets/logo/kayaa-logo.svg"
         alt="Kayaa brand"
-        style="width:100px;"
+        style="height:30px; margin: 10px auto; object-fit: unset;"
       />
     </DrawerTitle>
     <Subtitle>Situs Berbagi Karya.</Subtitle>
@@ -150,7 +150,7 @@
       {/each}
 
       <Separator nav />
-      <Item
+      <!-- <Item
         rel="prefetch"
         href="/auth/login"
         activated={active === 'Inbox'}
@@ -167,7 +167,7 @@
       >
         <Graphic class="material-icons" aria-hidden="true">star</Graphic>
         <Text>Daftar</Text>
-      </Item>
+      </Item> -->
     </List>
   </Content>
 </Drawer>
