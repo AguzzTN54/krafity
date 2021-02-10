@@ -44,7 +44,7 @@
         src="/assets/images/thumbnail.svg"
         alt={title}
       />
-      <a href="/katalog/categories/{category.slug}" class="category">
+      <a href="/katalog?category={category.slug}" class="category">
         {category.title}
       </a>
     </figure>
@@ -152,7 +152,7 @@
 
   .price {
     font-weight: bold;
-    font-size: .95rem;
+    font-size: 0.95rem;
     color: var(--mdc-theme-primary);
   }
 
