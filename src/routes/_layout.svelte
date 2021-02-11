@@ -7,11 +7,14 @@
   import { DenseFixedAdjust } from '@smui/top-app-bar';
   import LinearProgress from '@smui/linear-progress';
   import Appbar from '../components/Appbar.svelte';
-  import { mobile } from '../store';
+  import { mobile, windowWidth } from '../store';
 
   const { preloading } = stores();
 
-  const toggleResponsive = () => mobile.set(window.innerWidth < 750);
+  const toggleResponsive = () => {
+    windowWidth.set(window.innerWidth);
+    mobile.set(window.innerWidth < 750);
+  };
 
   const removeLoader = (loader, t) => {
     clearTimeout(t);
