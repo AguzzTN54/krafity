@@ -10,10 +10,6 @@
   export let list = [];
   const defaultList = [
     {
-      title: SITE_NAME,
-      link: '/',
-    },
-    {
       title: itm[1],
       link: `/${itm[1]}`,
     },
@@ -23,6 +19,7 @@
 </script>
 
 <div class="breadcrumbs">
+  <a href="/" class="item"> {SITE_NAME} </a>
   {#each list as { title, link }}
     {#if title}
       {#if link}
@@ -41,7 +38,7 @@
     border-radius: 50px;
     box-shadow: 0 0 3px rgba(205, 205, 205, 0.6);
   }
-  .item {
+  a.item {
     color: var(--mdc-theme-primary);
   }
   .item:nth-child(1)::before {
