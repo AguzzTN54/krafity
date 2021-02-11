@@ -10,4 +10,9 @@ const formatPrice = (prices) => {
   if (l > 3) return `${price.substring(0, l - 3)}K`;
 };
 
+// prettier-ignore
+export const formatNumber = (price) => price
+  .toString()
+  .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
 export default formatPrice;
